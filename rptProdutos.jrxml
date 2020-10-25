@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptProdutos" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2258d21b-fb30-4e5c-a031-b8349713e952">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pc_Produto."codPro" AS codPro,
+     pc_Produto."descricao" AS descricao,
+     pc_Produto."quantidade" AS quantidade,
+     pc_Produto."precoUnit" AS precoUnit
+FROM
+     "dbo"."pc_Produto" pc_Produto]]>
+	</queryString>
+	<field name="codPro" class="java.lang.Integer"/>
+	<field name="descricao" class="java.lang.String"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="precoUnit" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Right">
+				<reportElement x="326" y="4" width="198" height="64" uuid="37199105-9c9d-444d-9d79-11f9532c11d6"/>
+				<imageExpression><![CDATA["SplashImage.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="274" height="33" uuid="9cee27b0-cc29-48e1-9676-8d13e8856c8a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Relatório de Produtos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="567a1a41-99f7-41ec-8741-96b5ff673460"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="50" height="15" forecolor="#FF0000" uuid="65824f05-34d2-45c1-aa31-f8e71b3e09b0"/>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="50" y="19" width="226" height="15" forecolor="#FF0000" uuid="55687597-f5a0-4ac2-bb1f-e36319705bcc"/>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="138" height="15" forecolor="#FF0000" uuid="43024858-4c67-41dd-8886-10933e4c5a5a"/>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="138" height="15" forecolor="#FF0000" uuid="fa1741ce-4452-4e16-95dc-8fc6e5e28990"/>
+				<text><![CDATA[Preço Unitário]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="f6107f98-4b3c-47bf-a8f2-e0b869298c8f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="50" height="15" uuid="7094adfb-376f-40df-89e0-b2b648cc57ba"/>
+				<textFieldExpression><![CDATA[$F{codPro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="50" y="0" width="226" height="15" uuid="a27a6b8f-adc8-4d0e-ad9f-5c44b6a5fcc8"/>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="8264f997-cf0a-4878-bf61-e6c81d06e336"/>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+			<textField pattern="R$ ###,###,##0.00">
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="f7a957fd-8a05-4975-9ed9-6646deed3a4e"/>
+				<textFieldExpression><![CDATA[$F{precoUnit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="5ab1d75a-1bed-42cd-bcbc-1cea4bc423cc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="74b0523f-cf3b-4405-b451-cff4e3fac701"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="2496a83d-ef2f-41d8-a2fc-e641de392f1c"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy - HH:mm:ss">
+				<reportElement style="Column header" x="1" y="0" width="197" height="20" uuid="1bc68de4-4c27-4704-9501-f9c8b60e05cd"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
