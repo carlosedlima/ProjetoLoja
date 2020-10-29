@@ -1,7 +1,7 @@
 <h1>Projeto de um Sistema de vendas em Java.</h1><br>
 <h2>:convenience_store: Loja</h2><hr>
 Nome da loja: <b>PetVendas</b><br>
-Logo da Empresa:<br>
+Logo: <br>
 
 ![](Images/PetVendas.jpg)
 
