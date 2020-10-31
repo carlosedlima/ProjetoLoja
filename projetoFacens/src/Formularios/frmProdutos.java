@@ -1,14 +1,16 @@
 package Formularios;
 
 import Classes.Dados;
+import Classes.Produtos;
 import Classes.Usuarios;
+import Classes.Utilidades;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmUsuario extends javax.swing.JInternalFrame {
+public class frmProdutos extends javax.swing.JInternalFrame {
 
 private Dados clsdados;
-private int usuarioatual=0;
+private int produtoAtual=0;
 private boolean cmdnovo = false;
 private DefaultTableModel Usertable;
 
@@ -17,7 +19,7 @@ public void setDados(Dados clsdados){
     this.clsdados = clsdados;
 }
 
-    public frmUsuario() {
+    public frmProdutos() {
         initComponents();
     }
 
@@ -29,14 +31,11 @@ public void setDados(Dados clsdados){
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtCodigoUsuario = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
-        txtSnome = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JPasswordField();
-        txtCsenha = new javax.swing.JPasswordField();
+        txtCodigoProduto = new javax.swing.JTextField();
+        txtPreco = new javax.swing.JTextField();
+        txtDescricao = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        cmbPerfil = new javax.swing.JComboBox<>();
+        cmbTaxa = new javax.swing.JComboBox<>();
         cmdPesquisar = new javax.swing.JButton();
         cmdAnterior = new javax.swing.JButton();
         cmdProximo = new javax.swing.JButton();
@@ -49,11 +48,13 @@ public void setDados(Dados clsdados){
         cmdDeletar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtObs = new javax.swing.JTextArea();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Cadastro Usuarios :");
+        setTitle("Cadastro Produtos :");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -72,43 +73,42 @@ public void setDados(Dados clsdados){
             }
         });
 
-        jLabel1.setText("Cod Usuario");
+        jLabel1.setText("Cod Produto");
 
-        jLabel2.setText("Nome");
+        jLabel2.setText("Preço");
 
-        jLabel3.setText("S Nome");
+        jLabel3.setText("Descrição");
 
-        jLabel4.setText("Senha");
+        jLabel4.setText("Obs :");
 
-        jLabel5.setText("Conf Senha");
-
-        txtCodigoUsuario.setEnabled(false);
-
-        txtNome.setEnabled(false);
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigoProduto.setEnabled(false);
+        txtCodigoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
+                txtCodigoProdutoActionPerformed(evt);
             }
         });
 
-        txtSnome.setEnabled(false);
-
-        txtSenha.setEnabled(false);
-        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+        txtPreco.setEnabled(false);
+        txtPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenhaActionPerformed(evt);
+                txtPrecoActionPerformed(evt);
             }
         });
 
-        txtCsenha.setEnabled(false);
-
-        jLabel6.setText("Perfil:");
-
-        cmbPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Perfil", "Administrador", "Funcionario" }));
-        cmbPerfil.setEnabled(false);
-        cmbPerfil.addActionListener(new java.awt.event.ActionListener() {
+        txtDescricao.setEnabled(false);
+        txtDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPerfilActionPerformed(evt);
+                txtDescricaoActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Taxa");
+
+        cmbTaxa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Taxa", "0%", "10%", "15%", "20%" }));
+        cmbTaxa.setEnabled(false);
+        cmbTaxa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTaxaActionPerformed(evt);
             }
         });
 
@@ -195,63 +195,67 @@ public void setDados(Dados clsdados){
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Mtable.setEnabled(false);
         jScrollPane1.setViewportView(Mtable);
+
+        txtObs.setColumns(20);
+        txtObs.setRows(5);
+        txtObs.setEnabled(false);
+        jScrollPane2.setViewportView(txtObs);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cmbPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtCodigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbTaxa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmdPesquisar)
+                            .addComponent(cmdPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(cmdEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmdNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)))
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtSnome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cmdPesquisar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdAdicionar))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(cmdPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdProximo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmdUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cmdDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cmdCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cmdAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmdProximo)
+                                .addGap(14, 14, 14)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cmdUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmdAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmdDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmdCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                        .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,75 +263,71 @@ public void setDados(Dados clsdados){
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtCodigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(cmbPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbTaxa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtSnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtCsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(50, 50, 50))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmdPesquisar)
                     .addComponent(cmdEditar)
                     .addComponent(cmdNovo)
-                    .addComponent(cmdCancelar)
-                    .addComponent(cmdAdicionar))
+                    .addComponent(cmdAdicionar)
+                    .addComponent(cmdCancelar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmdAnterior)
                     .addComponent(cmdPrimeiro)
+                    .addComponent(cmdAnterior)
                     .addComponent(cmdProximo)
                     .addComponent(cmdUltimo)
                     .addComponent(cmdDeletar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPerfilActionPerformed
+    private void cmbTaxaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTaxaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPerfilActionPerformed
+    }//GEN-LAST:event_cmbTaxaActionPerformed
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+    private void txtPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
+    }//GEN-LAST:event_txtPrecoActionPerformed
 
     private void cmdPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPesquisarActionPerformed
         // ESTE CÓDIGO É DO BOTÃO PESQUISAR
-        String usuario = JOptionPane.showInputDialog("FAVOR DIGIAR O CODIGO DE USUARIO");
-        if(usuario.equals("")){
+        String produto = JOptionPane.showInputDialog("FAVOR DIGIAR O CODIGO DE PRODUTO");
+        if(produto.equals("")){
             return;
         }
-        int posL= clsdados.LinhaUsuario(usuario);
+        int posL= clsdados.LinhaProduto(produto);
         if(posL == -1){
-            JOptionPane.showMessageDialog(rootPane,"NÃO FOI POSSIVEL LOCALIZAR ESSE CADASTRO");
+            JOptionPane.showMessageDialog(rootPane,"NÃO FOI POSSIVEL LOCALIZAR ESSE PRODUTO");
             return;
         }
-        usuarioatual=posL;
+        produtoAtual=posL;
         visualizarCadastros();
     }//GEN-LAST:event_cmdPesquisarActionPerformed
 
     private void cmdAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAnteriorActionPerformed
         // CODIGO DO BOTÂO ANTERIOR
         
-        usuarioatual --;
-        if (usuarioatual == -1) {
-            usuarioatual= clsdados.Nusuarios()-1;
+        produtoAtual --;
+        if (produtoAtual == -1) {
+            produtoAtual= clsdados.Nprodutos()-1;
         }
         
         visualizarCadastros();
@@ -336,7 +336,7 @@ public void setDados(Dados clsdados){
 
     private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
         // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
-        usuarioatual=0;
+        produtoAtual=0;
         visualizarCadastros();
     }//GEN-LAST:event_cmdPrimeiroActionPerformed
 
@@ -344,76 +344,77 @@ public void setDados(Dados clsdados){
         //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE USUARIOS
         
         //CODIGO DE USUARIO
-        if (txtCodigoUsuario.getText().equals("")){
+        if (txtCodigoProduto.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O CODIGO PARA REALIZAR O CADASTRO");
-            txtCodigoUsuario.requestFocusInWindow();
+            txtCodigoProduto.requestFocusInWindow();
             return;
         }
         //PERFIL
-         if (cmbPerfil.getSelectedIndex()==0){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O PERFIL PARA REALIZAR O CADASTRO");
-            cmbPerfil.requestFocusInWindow();
+         if (cmbTaxa.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A TAXA PARA REALIZAR O CADASTRO");
+            cmbTaxa.requestFocusInWindow();
             return;
         }
          
          //NOME E SOBRENOME
-          if (txtNome.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O NOME PARA REALIZAR O CADASTRO");
-            txtNome.requestFocusInWindow();
+          if (txtPreco.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O PREÇO PARA REALIZAR O CADASTRO");
+            txtPreco.requestFocusInWindow();
             return;
         }
           
-           if (txtSnome.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O SOBRENOME PARA REALIZAR O CADASTRO");
-            txtSnome.requestFocusInWindow();
+           if (txtDescricao.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A DESCRIÇÃO PARA REALIZAR O CADASTRO");
+            txtDescricao.requestFocusInWindow();
             return;
         }
            
-           //SENHAS
-           String SSenha = new String (txtSenha.getPassword());
-           String Confsenha = new String (txtSenha.getPassword());
-           
-          if (SSenha.equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A SENHA PARA REALIZAR O CADASTRO");
-            txtSenha.requestFocusInWindow();
-            return;
-        }
-           if (Confsenha.equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO CONFIRMAR A SENHA PARA REALIZAR O CADASTRO");
-            txtCsenha.requestFocusInWindow();
-            return;
-        }
-           if (!SSenha.equals(Confsenha)){
-            JOptionPane.showMessageDialog(rootPane,"SENHAS NÃO CORRESPODEM");
-            txtCsenha.requestFocusInWindow();
+           if (txtObs.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A OBSERVAÇÃO PARA REALIZAR O CADASTRO");
+            txtObs.requestFocusInWindow();
             return;
         }
            
-         int poslinha = clsdados.LinhaUsuario(txtCodigoUsuario.getText());
+           if(!Utilidades.isNumeric(txtPreco.getText())){
+              
+           }else{
+               JOptionPane.showMessageDialog(rootPane, "ESTE CAMPO ACEITA APENAS NUMEROS");
+               txtPreco.requestFocusInWindow();
+               return;
+           }
+           
+           int preco = Integer.parseInt(txtPreco.getText());
+           if (preco<=0){
+               JOptionPane.showMessageDialog(rootPane, "ESTE CAMPO ACEITA APENAS NUMEROS MAIORES QUE ZERO");
+               txtPreco.requestFocusInWindow();
+               return;
+           }
+           
+         int poslinha = clsdados.LinhaUsuario(txtCodigoProduto.getText());
          if(cmdnovo){  
            if (poslinha != -1) {
-            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO JA EXISTE");
-            txtCodigoUsuario.requestFocusInWindow();
+            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE PRODUTO JA EXISTE");
+            txtCodigoProduto.requestFocusInWindow();
             return;
         }else{
            if (poslinha != -1) {
-            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO NÂO EXISTE");
-            txtCodigoUsuario.requestFocusInWindow();
+            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE PRODUTO NÂO EXISTE");
+            txtCodigoProduto.requestFocusInWindow();
             return;
             }
            }
          }
-   Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(String)cmbPerfil.getSelectedItem());
+         Produtos mProduto = new Produtos(txtCodigoProduto.getText(),txtDescricao.getText(),preco,cmbTaxa.getSelectedIndex(),txtObs.getText());
     
    String msg;
    
    if(cmdnovo){
        
-        msg = clsdados.CadastroUsuario(Musuario);
+        msg = clsdados.CadastroProduto(mProduto);
         
    }else{
        
-        msg = clsdados.EditarUsuario(Musuario, poslinha);
+        msg = clsdados.EditarProduto(mProduto, poslinha);
         
         }
       
@@ -436,19 +437,18 @@ public void setDados(Dados clsdados){
         
         
         //Campos exibição
-        txtCodigoUsuario.setEnabled(false);
-        txtNome.setEnabled(false);
-        txtSnome.setEnabled(false);
-        txtSenha.setEnabled(false);
-        txtCsenha.setEnabled(false);
-        cmbPerfil.setEnabled(false);
+        txtCodigoProduto.setEnabled(false);
+        txtPreco.setEnabled(false);
+        txtDescricao.setEnabled(false);
+        txtObs.setEnabled(false);
+        cmbTaxa.setEnabled(false);
         
-        CarregarTable();
+       
     }//GEN-LAST:event_cmdAdicionarActionPerformed
     
     private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
         
-    // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CADASTRO USUARIOS
+    // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CADASTRO PRODUTOS
         
         //Botões exibição
         cmdPrimeiro.setEnabled(false);
@@ -462,19 +462,18 @@ public void setDados(Dados clsdados){
         cmdNovo.setEnabled(false);
         
         //Campos exibição
-        txtNome.setEnabled(true);
-        txtSnome.setEnabled(true);
-        txtSenha.setEnabled(true);
-        txtCsenha.setEnabled(true);
-        cmbPerfil.setEnabled(true);
+        txtPreco.setEnabled(true);
+        txtDescricao.setEnabled(true);
+        txtObs.setEnabled(true);
+        cmbTaxa.setEnabled(true);
         
         
         cmdnovo = false;
-        txtCodigoUsuario.requestFocusInWindow();
+        txtCodigoProduto.requestFocusInWindow();
     }//GEN-LAST:event_cmdEditarActionPerformed
 
     private void cmdNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNovoActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO USUARIOS
+        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO PRODUTOS
         
         //Botões exibição
         cmdPrimeiro.setEnabled(false);
@@ -489,29 +488,27 @@ public void setDados(Dados clsdados){
         cmdDeletar.setEnabled(false);
         
         //Campos exibição
-        txtCodigoUsuario.setEnabled(true);
-        txtNome.setEnabled(true);
-        txtSnome.setEnabled(true);
-        txtSenha.setEnabled(true);
-        txtCsenha.setEnabled(true);
-        cmbPerfil.setEnabled(true);
+        txtCodigoProduto.setEnabled(true);
+        txtPreco.setEnabled(true);
+        txtDescricao.setEnabled(true);
+        txtObs.setEnabled(true);
+        cmbTaxa.setEnabled(true);
         
         //Campos Limpos
-        txtCodigoUsuario.setText("");
-        txtNome.setText("");
-        txtSnome.setText("");
-        txtSenha.setText("");
-        txtCsenha.setText("");
-        cmbPerfil.setSelectedIndex(0);
+        txtCodigoProduto.setText("");
+        txtPreco.setText("");
+        txtDescricao.setText("");
+        txtObs.setText("");
+        cmbTaxa.setSelectedIndex(0);
         
         cmdnovo = true;
         
-        txtCodigoUsuario.requestFocusInWindow();
+        txtCodigoProduto.requestFocusInWindow();
         CarregarTable();
     }//GEN-LAST:event_cmdNovoActionPerformed
 
     private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO USUARIOS
+        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO PRODUTOS
         
         //botões exibição
         cmdPrimeiro.setEnabled(true);
@@ -526,17 +523,12 @@ public void setDados(Dados clsdados){
         
         
         //Campos exibição
-        txtCodigoUsuario.setEnabled(false);
-        txtNome.setEnabled(false);
-        txtSnome.setEnabled(false);
-        txtSenha.setEnabled(false);
-        txtCsenha.setEnabled(false);
-        cmbPerfil.setEnabled(false);
+        txtCodigoProduto.setEnabled(false);
+        txtPreco.setEnabled(false);
+        txtDescricao.setEnabled(false);
+        txtObs.setEnabled(false);
+        cmbTaxa.setEnabled(false);
     }//GEN-LAST:event_cmdCancelarActionPerformed
-
-    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
         
@@ -545,16 +537,16 @@ public void setDados(Dados clsdados){
     }//GEN-LAST:event_formInternalFrameOpened
 
     private void cmdUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUltimoActionPerformed
-        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO USUARIOS
-        usuarioatual = clsdados.Nusuarios()-1;
+        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO PRODUTOS
+        produtoAtual = clsdados.Nprodutos()-1;
         visualizarCadastros();
     }//GEN-LAST:event_cmdUltimoActionPerformed
 
     private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
-        // 
-        usuarioatual ++;
-        if (usuarioatual == clsdados.Nusuarios()) {
-            usuarioatual=0;
+        // BOTÃO PROXIMO ITEM
+        produtoAtual ++;
+        if (produtoAtual == clsdados.Nprodutos()) {
+            produtoAtual=0;
         }
         visualizarCadastros();
     }//GEN-LAST:event_cmdProximoActionPerformed
@@ -562,47 +554,64 @@ public void setDados(Dados clsdados){
     private void cmdDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeletarActionPerformed
         // ESTE É O CODIGO DO BOTÃO DELETAR
         
-        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DLETAR ESTE CADASTRO");
+        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DELETAR ESTE CADASTRO?");
         
         if (Del !=0) {
             return;
         }
         String msg;
-        msg = clsdados.DeletarUsuario(usuarioatual);
+        msg = clsdados.DeletarProduto(produtoAtual);
         JOptionPane.showMessageDialog(rootPane, msg);
-            usuarioatual=0;
+            produtoAtual=0;
             visualizarCadastros();
             CarregarTable();
     }//GEN-LAST:event_cmdDeletarActionPerformed
+
+    private void txtCodigoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoProdutoActionPerformed
+
+    private void txtDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescricaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescricaoActionPerformed
      private void visualizarCadastros(){
-        txtCodigoUsuario.setText(clsdados.getUsuarios()[usuarioatual].getCodusuario());
-        txtNome.setText(clsdados.getUsuarios()[usuarioatual].getNome());
-        txtSnome.setText(clsdados.getUsuarios()[usuarioatual].getSnome());
-        txtSenha.setText(clsdados.getUsuarios()[usuarioatual].getSenha());
-        txtCsenha.setText(clsdados.getUsuarios()[usuarioatual].getSenha());
-        cmbPerfil.setSelectedItem(clsdados.getUsuarios()[usuarioatual].getPerfil());
+        txtCodigoProduto.setText(clsdados.getProdutos()[produtoAtual].getCodProduto());
+        txtPreco.setText("" + clsdados.getProdutos()[produtoAtual].getPreco());
+        txtDescricao.setText(clsdados.getProdutos()[produtoAtual].getDescricao());
+        txtObs.setText(clsdados.getProdutos()[produtoAtual].getObs());
+        cmbTaxa.setSelectedItem(clsdados.getProdutos()[produtoAtual].getTaxa());
     }
 
      private void CarregarTable(){
-         String titulocabecalho[]={"Cod Usuario","Nome","Sobrenome","Perfil"};
-         String RegCadastro[] = new String [4];
+         String titulocabecalho[]={"Cod Produtos","Descrição","Preço","Taxa","Obs"};
+         String RegCadastro[] = new String [5];
          Usertable= new DefaultTableModel(null,titulocabecalho);
          for (int i = 0; i < clsdados.Nusuarios(); i++) {
-             RegCadastro[0]= clsdados.getUsuarios()[i].getCodusuario();
-              RegCadastro[1]= clsdados.getUsuarios()[i].getNome();
-               RegCadastro[2]= clsdados.getUsuarios()[i].getSnome();
-                RegCadastro[3]= clsdados.getUsuarios()[i].getPerfil();
+             RegCadastro[0]= clsdados.getProdutos()[i].getCodProduto();
+              RegCadastro[1]= clsdados.getProdutos()[i].getDescricao();
+               RegCadastro[2]= "" + clsdados.getProdutos()[i].getPreco();
+                RegCadastro[3]= Taxa(clsdados.getProdutos()[i].getTaxa());
+                 RegCadastro[4]= clsdados.getProdutos()[i].getObs();
                 
                 Usertable.addRow(RegCadastro);    
          }
          Mtable.setModel(Usertable);
      }
      
-     
+     private String Taxa (int idtaxa){
+         switch (idtaxa){
+             case 0: return "0%";
+             case 1: return "10%";
+             case 2: return "15%";
+             case 3: return "20%";
+           
+             default: return "SEM TAXA";
+         }
+     }
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Mtable;
-    private javax.swing.JComboBox<String> cmbPerfil;
+    private javax.swing.JComboBox<String> cmbTaxa;
     private javax.swing.JButton cmdAdicionar;
     private javax.swing.JButton cmdAnterior;
     private javax.swing.JButton cmdCancelar;
@@ -617,13 +626,12 @@ public void setDados(Dados clsdados){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtCodigoUsuario;
-    private javax.swing.JPasswordField txtCsenha;
-    private javax.swing.JTextField txtNome;
-    private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JTextField txtSnome;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField txtCodigoProduto;
+    private javax.swing.JTextField txtDescricao;
+    private javax.swing.JTextArea txtObs;
+    private javax.swing.JTextField txtPreco;
     // End of variables declaration//GEN-END:variables
 }

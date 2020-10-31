@@ -5,8 +5,8 @@ import java.util.Date;
 
 
 public class Clientes {
-    private String idCliente;
-    private int ident;
+    private String CodigoCliente;
+    private int Indent;
     private String Nome;
     private String Sobrenome;
     private String Endereco;
@@ -16,10 +16,10 @@ public class Clientes {
     private Date DataVenda;
     private String Email;
 
-    public Clientes(String idCliente, int ident, String Nome, String Sobrenome, String Endereco, int Cidade,
+    public Clientes(String CodigoCliente, int Indent, String Nome, String Sobrenome, String Endereco, int Cidade,
             String Telefone, Date DataNasc, Date DataVenda, String Email) {
-        this.idCliente = idCliente;
-        this.ident = ident;
+        this.CodigoCliente = CodigoCliente;
+        this.Indent = Indent;
         this.Nome = Nome;
         this.Sobrenome = Sobrenome;
         this.Endereco = Endereco;
@@ -47,29 +47,20 @@ public class Clientes {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public String getIdCliente() {
-        return idCliente;
+    public String getCodigoCliente() {
+        return CodigoCliente;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+    public void setCodigoCliente(String CodigoCliente) {
+        this.CodigoCliente = CodigoCliente;
     }
 
-    public int getIdent() {
-        return ident;
+    public int getIndent() {
+        return Indent;
     }
 
-    public void setIdent(int ident) {
-        this.ident = ident;
+    public void setIndent(int Indent) {
+        this.Indent = Indent;
     }
 
     public String getNome() {
@@ -135,6 +126,21 @@ public class Clientes {
     public void setEmail(String Email) {
         this.Email = Email;
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     
     
     

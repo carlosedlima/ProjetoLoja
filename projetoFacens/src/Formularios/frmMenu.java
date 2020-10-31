@@ -81,6 +81,11 @@ public void setDados(Dados clsdados){
 
         mnarquivo_produtos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/produto.png"))); // NOI18N
         mnarquivo_produtos.setText("Produtos");
+        mnarquivo_produtos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnarquivo_produtosActionPerformed(evt);
+            }
+        });
         mnarquivo.add(mnarquivo_produtos);
 
         mnarquivo_usuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/usuarios.png"))); // NOI18N
@@ -160,7 +165,7 @@ public void setDados(Dados clsdados){
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnarquivo_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_usuariosActionPerformed
-        // Este código é do botão usuarios da barra de menu.
+        // ESTE É O CÓDIGO DO BOTÃO USUARIO NA BARRA DE MENU
         frmUsuario fusuario = new frmUsuario();
         fusuario.setDados(clsdados);
         DeskPainel.add (fusuario);
@@ -178,8 +183,20 @@ public void setDados(Dados clsdados){
     }//GEN-LAST:event_mnarquivo_altusuarioActionPerformed
 
     private void mnarquivo_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_clientesActionPerformed
-             // local onde fica o cadastro
+        // CÓDIGO DO BOTÃO CLIENTES NA BARRA DE MENU
+        frmClientes fclientes = new frmClientes();
+        fclientes.setDados(clsdados);
+        DeskPainel.add (fclientes);
+        fclientes.show();
     }//GEN-LAST:event_mnarquivo_clientesActionPerformed
+
+    private void mnarquivo_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_produtosActionPerformed
+        // ESTE É O CÓDIGO DO BOTÃO PRODUTO NA BARRA DE MENU
+        frmProdutos fprodutos = new frmProdutos();
+        fprodutos.setDados(clsdados);
+        DeskPainel.add (fprodutos);
+        fprodutos.show();
+    }//GEN-LAST:event_mnarquivo_produtosActionPerformed
 
     /**
      * @param args the command line arguments

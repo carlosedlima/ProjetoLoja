@@ -20,10 +20,10 @@ public class Utilidades {
     }
     
     public static Date StringToDate(String Data){
-    SimpleDateFormat formatotexto = new SimpleDateFormat("yyy/MM/dd");
+    SimpleDateFormat formatotexto = new SimpleDateFormat("yyyy/MM/dd");
     Date x = null;
     try{
-         x = formatotexto.parse(Data);
+        x = formatotexto.parse(Data);
          
     }catch(ParseException ex){
     
