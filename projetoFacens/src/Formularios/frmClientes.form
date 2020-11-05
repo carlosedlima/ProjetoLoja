@@ -74,7 +74,7 @@
                           </Group>
                           <Component id="txtNomeC" min="-2" pref="465" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -424,9 +424,9 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="calData">
+    <Component class="org.netbeans.modules.form.InvalidComponent" name="calData">
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="calNascimento">
+    <Component class="org.netbeans.modules.form.InvalidComponent" name="calNascimento">
     </Component>
   </SubComponents>
 </Form>

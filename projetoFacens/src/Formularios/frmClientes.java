@@ -57,8 +57,8 @@ public void setDados(Dados clsdados){
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         cmbidentifica = new javax.swing.JComboBox<>();
-        calData = new com.toedter.calendar.JDateChooser();
-        calNascimento = new com.toedter.calendar.JDateChooser();
+        calData = new org.netbeans.modules.form.InvalidComponent();
+        calNascimento = new org.netbeans.modules.form.InvalidComponent();
 
         setClosable(true);
         setIconifiable(true);
@@ -290,7 +290,7 @@ public void setDados(Dados clsdados){
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(calData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtNomeC, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 21, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -767,8 +767,8 @@ public void setDados(Dados clsdados){
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Mtable;
-    private com.toedter.calendar.JDateChooser calData;
-    private com.toedter.calendar.JDateChooser calNascimento;
+    private org.netbeans.modules.form.InvalidComponent calData;
+    private org.netbeans.modules.form.InvalidComponent calNascimento;
     private javax.swing.JComboBox<String> cmbCidade;
     private javax.swing.JComboBox<String> cmbidentifica;
     private javax.swing.JButton cmdAdicionar;
