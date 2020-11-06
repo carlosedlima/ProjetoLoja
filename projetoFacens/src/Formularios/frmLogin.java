@@ -31,76 +31,41 @@ public void setDados(Dados clsdados){
 
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        label1 = new java.awt.Label();
-        label2 = new java.awt.Label();
-        cmdLogin = new javax.swing.JButton();
-        cmdSair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
         jPanel1 = new javax.swing.JPanel();
         txtUsuario = new javax.swing.JTextField();
+        label2 = new java.awt.Label();
         jPanel2 = new javax.swing.JPanel();
         txtViewSenha = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        CheckBox = new javax.swing.JCheckBox();
         erroSenha = new javax.swing.JLabel();
+        cmdSair = new javax.swing.JButton();
+        cmdLogin = new javax.swing.JButton();
+        CheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lgin");
         setUndecorated(true);
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(51, 61, 71));
+        jPanel3.setBackground(new java.awt.Color(32, 34, 37));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 176));
         jPanel3.setRequestFocusEnabled(false);
         jPanel3.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
-        jPanel4.setLayout(null);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Login");
+        jPanel3.add(jLabel1);
+        jLabel1.setBounds(30, 20, 250, 30);
 
         label1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
         label1.setText("Usuario:");
-        jPanel4.add(label1);
-        label1.setBounds(10, 40, 50, 19);
-
-        label2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label2.setForeground(new java.awt.Color(255, 255, 255));
-        label2.setText("Senha:");
-        jPanel4.add(label2);
-        label2.setBounds(10, 70, 43, 19);
-
-        cmdLogin.setBackground(new java.awt.Color(51, 61, 71));
-        cmdLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cmdLogin.setForeground(new java.awt.Color(255, 255, 255));
-        cmdLogin.setText("Login");
-        cmdLogin.setBorder(null);
-        cmdLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdLoginActionPerformed(evt);
-            }
-        });
-        jPanel4.add(cmdLogin);
-        cmdLogin.setBounds(150, 110, 88, 30);
-
-        cmdSair.setBackground(new java.awt.Color(51, 61, 71));
-        cmdSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cmdSair.setForeground(new java.awt.Color(255, 255, 255));
-        cmdSair.setText("Sair");
-        cmdSair.setBorder(null);
-        cmdSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdSairActionPerformed(evt);
-            }
-        });
-        jPanel4.add(cmdSair);
-        cmdSair.setBounds(60, 110, 84, 30);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Login");
-        jPanel4.add(jLabel1);
-        jLabel1.setBounds(10, 0, 250, 30);
+        jPanel3.add(label1);
+        label1.setBounds(30, 60, 50, 19);
 
         jPanel1.setBackground(new java.awt.Color(51, 61, 71));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -118,8 +83,14 @@ public void setDados(Dados clsdados){
         jPanel1.add(txtUsuario);
         txtUsuario.setBounds(10, 0, 300, 30);
 
-        jPanel4.add(jPanel1);
-        jPanel1.setBounds(60, 40, 320, 30);
+        jPanel3.add(jPanel1);
+        jPanel1.setBounds(80, 60, 320, 30);
+
+        label2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label2.setForeground(new java.awt.Color(255, 255, 255));
+        label2.setText("Senha:");
+        jPanel3.add(label2);
+        label2.setBounds(30, 90, 43, 19);
 
         jPanel2.setBackground(new java.awt.Color(51, 61, 71));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -150,8 +121,40 @@ public void setDados(Dados clsdados){
         jPanel2.add(txtSenha);
         txtSenha.setBounds(10, 0, 300, 30);
 
-        jPanel4.add(jPanel2);
-        jPanel2.setBounds(60, 70, 320, 30);
+        jPanel3.add(jPanel2);
+        jPanel2.setBounds(80, 90, 320, 30);
+
+        erroSenha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        erroSenha.setForeground(new java.awt.Color(153, 0, 0));
+        erroSenha.setText("*senha ou/e usuario incorretos");
+        jPanel3.add(erroSenha);
+        erroSenha.setBounds(80, 120, 280, 20);
+
+        cmdSair.setBackground(new java.awt.Color(51, 61, 71));
+        cmdSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdSair.setForeground(new java.awt.Color(255, 255, 255));
+        cmdSair.setText("Sair");
+        cmdSair.setBorder(null);
+        cmdSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSairActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdSair);
+        cmdSair.setBounds(80, 140, 84, 30);
+
+        cmdLogin.setBackground(new java.awt.Color(51, 61, 71));
+        cmdLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdLogin.setForeground(new java.awt.Color(255, 255, 255));
+        cmdLogin.setText("Login");
+        cmdLogin.setBorder(null);
+        cmdLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLoginActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdLogin);
+        cmdLogin.setBounds(170, 140, 88, 30);
 
         CheckBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         CheckBox.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,22 +166,14 @@ public void setDados(Dados clsdados){
                 CheckBoxActionPerformed(evt);
             }
         });
-        jPanel4.add(CheckBox);
-        CheckBox.setBounds(240, 110, 90, 23);
-
-        erroSenha.setForeground(new java.awt.Color(153, 0, 0));
-        erroSenha.setText("*senha ou/e usuario incorretos");
-        jPanel4.add(erroSenha);
-        erroSenha.setBounds(60, 100, 280, 10);
-
-        jPanel3.add(jPanel4);
-        jPanel4.setBounds(10, 10, 400, 160);
+        jPanel3.add(CheckBox);
+        CheckBox.setBounds(260, 140, 90, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +198,8 @@ public void setDados(Dados clsdados){
     private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
        // Botão login
        
-       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){
+       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){ 
+       }else{    
            erroSenha.setVisible(true);
            txtUsuario.setText("");
            txtSenha.setText("");
@@ -291,7 +287,6 @@ if(CheckBox.isSelected()){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private javax.swing.JPasswordField txtSenha;
