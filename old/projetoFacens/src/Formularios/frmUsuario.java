@@ -1,68 +1,114 @@
-
 package Formularios;
-
 
 import Classes.Dados;
 import Classes.Usuarios;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class frmUsuario extends javax.swing.JFrame {
+public class frmUsuario extends javax.swing.JInternalFrame {
 
 private Dados clsdados;
 private int usuarioatual=0;
 private boolean cmdnovo = false;
 private DefaultTableModel Usertable;
-    
+
+
 public void setDados(Dados clsdados){
     this.clsdados = clsdados;
 }
-    
+
     public frmUsuario() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cmdPrimeiro = new javax.swing.JButton();
-        cmdPesquisar = new javax.swing.JButton();
-        cmdEditar = new javax.swing.JButton();
-        cmdAnterior = new javax.swing.JButton();
-        cmdProximo = new javax.swing.JButton();
-        cmdUltimo = new javax.swing.JButton();
-        cmdDeletar = new javax.swing.JButton();
-        cmdCancelar = new javax.swing.JButton();
-        cmdAdicionar = new javax.swing.JButton();
-        cmdNovo = new javax.swing.JButton();
-        txtCsenha = new javax.swing.JPasswordField();
-        txtSenha = new javax.swing.JPasswordField();
-        txtSnome = new javax.swing.JTextField();
-        txtNome = new javax.swing.JTextField();
-        txtCodigoUsuario = new javax.swing.JTextField();
-        cmbPerfil = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txtCodigoUsuario = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
+        txtSnome = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
+        txtCsenha = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        cmbPerfil = new javax.swing.JComboBox<>();
+        cmdPesquisar = new javax.swing.JButton();
+        cmdAnterior = new javax.swing.JButton();
+        cmdProximo = new javax.swing.JButton();
+        cmdUltimo = new javax.swing.JButton();
+        cmdPrimeiro = new javax.swing.JButton();
+        cmdAdicionar = new javax.swing.JButton();
+        cmdEditar = new javax.swing.JButton();
+        cmdNovo = new javax.swing.JButton();
+        cmdCancelar = new javax.swing.JButton();
+        cmdDeletar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setTitle("Cadastro Usuarios :");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameOpened(evt);
             }
         });
 
-        cmdPrimeiro.setText("Primeiro");
-        cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Cod Usuario");
+
+        jLabel2.setText("Nome");
+
+        jLabel3.setText("S Nome");
+
+        jLabel4.setText("Senha");
+
+        jLabel5.setText("Conf Senha");
+
+        txtCodigoUsuario.setEnabled(false);
+
+        txtNome.setEnabled(false);
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdPrimeiroActionPerformed(evt);
+                txtNomeActionPerformed(evt);
+            }
+        });
+
+        txtSnome.setEnabled(false);
+
+        txtSenha.setEnabled(false);
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+
+        txtCsenha.setEnabled(false);
+
+        jLabel6.setText("Perfil:");
+
+        cmbPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Perfil", "Administrador", "Funcionario" }));
+        cmbPerfil.setEnabled(false);
+        cmbPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPerfilActionPerformed(evt);
             }
         });
 
@@ -70,13 +116,6 @@ public void setDados(Dados clsdados){
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
-            }
-        });
-
-        cmdEditar.setText("Editar");
-        cmdEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdEditarActionPerformed(evt);
             }
         });
 
@@ -101,18 +140,10 @@ public void setDados(Dados clsdados){
             }
         });
 
-        cmdDeletar.setText("Deletar");
-        cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
+        cmdPrimeiro.setText("Primeiro");
+        cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdDeletarActionPerformed(evt);
-            }
-        });
-
-        cmdCancelar.setText("Cancelar");
-        cmdCancelar.setEnabled(false);
-        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdCancelarActionPerformed(evt);
+                cmdPrimeiroActionPerformed(evt);
             }
         });
 
@@ -124,6 +155,13 @@ public void setDados(Dados clsdados){
             }
         });
 
+        cmdEditar.setText("Editar");
+        cmdEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdEditarActionPerformed(evt);
+            }
+        });
+
         cmdNovo.setText("Novo");
         cmdNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,45 +169,20 @@ public void setDados(Dados clsdados){
             }
         });
 
-        txtCsenha.setEnabled(false);
-
-        txtSenha.setEnabled(false);
-        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+        cmdCancelar.setText("Cancelar");
+        cmdCancelar.setEnabled(false);
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenhaActionPerformed(evt);
+                cmdCancelarActionPerformed(evt);
             }
         });
 
-        txtSnome.setEnabled(false);
-
-        txtNome.setEnabled(false);
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
+        cmdDeletar.setText("Deletar");
+        cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
+                cmdDeletarActionPerformed(evt);
             }
         });
-
-        txtCodigoUsuario.setEnabled(false);
-
-        cmbPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Perfil", "Administrador", "Funcionario" }));
-        cmbPerfil.setEnabled(false);
-        cmbPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbPerfilActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Perfil:");
-
-        jLabel1.setText("Cod Usuario");
-
-        jLabel2.setText("Nome");
-
-        jLabel3.setText("S Nome");
-
-        jLabel4.setText("Senha");
-
-        jLabel5.setText("Conf Senha");
 
         Mtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,7 +195,6 @@ public void setDados(Dados clsdados){
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        Mtable.setEnabled(false);
         jScrollPane1.setViewportView(Mtable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,11 +299,13 @@ public void setDados(Dados clsdados){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
-        // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
-        usuarioatual=0;
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdPrimeiroActionPerformed
+    private void cmbPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbPerfilActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     private void cmdPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPesquisarActionPerformed
         // ESTE CÓDIGO É DO BOTÃO PESQUISAR
@@ -308,101 +322,27 @@ public void setDados(Dados clsdados){
         visualizarCadastros();
     }//GEN-LAST:event_cmdPesquisarActionPerformed
 
-    private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
-
-        // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CADASTRO USUARIOS
-
-        //Botões exibição
-        cmdPrimeiro.setEnabled(false);
-        cmdUltimo.setEnabled(false);
-        cmdProximo.setEnabled(false);
-        cmdAnterior.setEnabled(false);
-        cmdCancelar.setEnabled(true);//TRUE
-        cmdPesquisar.setEnabled(false);
-        cmdAdicionar.setEnabled(true);//TRUE
-        cmdEditar.setEnabled(false);
-        cmdNovo.setEnabled(false);
-
-        //Campos exibição
-        txtNome.setEnabled(true);
-        txtSnome.setEnabled(true);
-        txtSenha.setEnabled(true);
-        txtCsenha.setEnabled(true);
-        cmbPerfil.setEnabled(true);
-
-        cmdnovo = false;
-        txtCodigoUsuario.requestFocusInWindow();
-    }//GEN-LAST:event_cmdEditarActionPerformed
-
     private void cmdAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAnteriorActionPerformed
         // CODIGO DO BOTÂO ANTERIOR
-
+        
         usuarioatual --;
         if (usuarioatual == -1) {
             usuarioatual= clsdados.Nusuarios()-1;
         }
-
+        
         visualizarCadastros();
-
+        
     }//GEN-LAST:event_cmdAnteriorActionPerformed
 
-    private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
-        //
-        usuarioatual ++;
-        if (usuarioatual == clsdados.Nusuarios()) {
-            usuarioatual=0;
-        }
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdProximoActionPerformed
-
-    private void cmdUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUltimoActionPerformed
-        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO USUARIOS
-        usuarioatual = clsdados.Nusuarios()-1;
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdUltimoActionPerformed
-
-    private void cmdDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeletarActionPerformed
-        // ESTE É O CODIGO DO BOTÃO DELETAR
-
-        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DLETAR ESTE CADASTRO");
-
-        if (Del !=0) {
-            return;
-        }
-        String msg;
-        msg = clsdados.DeletarUsuario(usuarioatual);
-        JOptionPane.showMessageDialog(rootPane, msg);
+    private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
+        // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
         usuarioatual=0;
         visualizarCadastros();
-        CarregarTable();
-    }//GEN-LAST:event_cmdDeletarActionPerformed
-
-    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO USUARIOS
-
-        //botões exibição
-        cmdPrimeiro.setEnabled(true);
-        cmdUltimo.setEnabled(true);
-        cmdProximo.setEnabled(true);
-        cmdAnterior.setEnabled(true);
-        cmdCancelar.setEnabled(false);
-        cmdPesquisar.setEnabled(true);
-        cmdAdicionar.setEnabled(false);
-        cmdEditar.setEnabled(true);
-        cmdNovo.setEnabled(true);
-
-        //Campos exibição
-        txtCodigoUsuario.setEnabled(false);
-        txtNome.setEnabled(false);
-        txtSnome.setEnabled(false);
-        txtSenha.setEnabled(false);
-        txtCsenha.setEnabled(false);
-        cmbPerfil.setEnabled(false);
-    }//GEN-LAST:event_cmdCancelarActionPerformed
+    }//GEN-LAST:event_cmdPrimeiroActionPerformed
 
     private void cmdAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAdicionarActionPerformed
         //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE USUARIOS
-
+        
         //CODIGO DE USUARIO
         if (txtCodigoUsuario.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O CODIGO PARA REALIZAR O CADASTRO");
@@ -410,77 +350,78 @@ public void setDados(Dados clsdados){
             return;
         }
         //PERFIL
-        if (cmbPerfil.getSelectedIndex()==0){
+         if (cmbPerfil.getSelectedIndex()==0){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O PERFIL PARA REALIZAR O CADASTRO");
             cmbPerfil.requestFocusInWindow();
             return;
         }
-
-        //NOME E SOBRENOME
-        if (txtNome.getText().equals("")){
+         
+         //NOME E SOBRENOME
+          if (txtNome.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O NOME PARA REALIZAR O CADASTRO");
             txtNome.requestFocusInWindow();
             return;
         }
-
-        if (txtSnome.getText().equals("")){
+          
+           if (txtSnome.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O SOBRENOME PARA REALIZAR O CADASTRO");
             txtSnome.requestFocusInWindow();
             return;
         }
-
-        //SENHAS
-        String SSenha = new String (txtSenha.getPassword());
-        String Confsenha = new String (txtSenha.getPassword());
-
-        if (SSenha.equals("")){
+           
+           //SENHAS
+           String SSenha = new String (txtSenha.getPassword());
+           String Confsenha = new String (txtSenha.getPassword());
+           
+          if (SSenha.equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A SENHA PARA REALIZAR O CADASTRO");
             txtSenha.requestFocusInWindow();
             return;
         }
-        if (Confsenha.equals("")){
+           if (Confsenha.equals("")){
             JOptionPane.showMessageDialog(rootPane,"È NECESSARIO CONFIRMAR A SENHA PARA REALIZAR O CADASTRO");
             txtCsenha.requestFocusInWindow();
             return;
         }
-        if (!SSenha.equals(Confsenha)){
+           if (!SSenha.equals(Confsenha)){
             JOptionPane.showMessageDialog(rootPane,"SENHAS NÃO CORRESPODEM");
             txtCsenha.requestFocusInWindow();
             return;
         }
-
-        int poslinha = clsdados.LinhaUsuario(txtCodigoUsuario.getText());
-        if(cmdnovo){
-            if (poslinha != -1) {
-                JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO JA EXISTE");
-                txtCodigoUsuario.requestFocusInWindow();
-                return;
-            }else{
-                if (poslinha != -1) {
-                    JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO NÂO EXISTE");
-                    txtCodigoUsuario.requestFocusInWindow();
-                    return;
-                }
-            }
-        }
-        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(int)cmbPerfil.getSelectedItem());
-
-        String msg;
-
-        if(cmdnovo){
-
-            msg = clsdados.CadastroUsuario(Musuario);
-
+           
+         int poslinha = clsdados.LinhaUsuario(txtCodigoUsuario.getText());
+         if(cmdnovo){  
+           if (poslinha != -1) {
+            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO JA EXISTE");
+            txtCodigoUsuario.requestFocusInWindow();
+            return;
         }else{
-
-            msg = clsdados.EditarUsuario(Musuario, poslinha);
-
+           if (poslinha != -1) {
+            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE USUARIO NÂO EXISTE");
+            txtCodigoUsuario.requestFocusInWindow();
+            return;
+            }
+           }
+         }
+   Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(String)cmbPerfil.getSelectedItem());
+    
+   String msg;
+   
+   if(cmdnovo){
+       
+        msg = clsdados.CadastroUsuario(Musuario);
+        
+   }else{
+       
+        msg = clsdados.EditarUsuario(Musuario, poslinha);
+        
         }
-
-        JOptionPane.showMessageDialog(rootPane, msg);
+      
+    JOptionPane.showMessageDialog(rootPane, msg);
+    
 
         // ESTE É O CÓDIGO DO BOTÃO SALVAR DO FORMULARÍO CADASTRO USUARIOS
-
+        
         //Botões exibição
         cmdPrimeiro.setEnabled(true);
         cmdUltimo.setEnabled(true);
@@ -492,7 +433,8 @@ public void setDados(Dados clsdados){
         cmdEditar.setEnabled(true);
         cmdNovo.setEnabled(true);
         cmdDeletar.setEnabled(true);
-
+        
+        
         //Campos exibição
         txtCodigoUsuario.setEnabled(false);
         txtNome.setEnabled(false);
@@ -500,13 +442,40 @@ public void setDados(Dados clsdados){
         txtSenha.setEnabled(false);
         txtCsenha.setEnabled(false);
         cmbPerfil.setEnabled(false);
-
+        
         CarregarTable();
     }//GEN-LAST:event_cmdAdicionarActionPerformed
+    
+    private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
+        
+    // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CADASTRO USUARIOS
+        
+        //Botões exibição
+        cmdPrimeiro.setEnabled(false);
+        cmdUltimo.setEnabled(false);
+        cmdProximo.setEnabled(false);
+        cmdAnterior.setEnabled(false);
+        cmdCancelar.setEnabled(true);//TRUE
+        cmdPesquisar.setEnabled(false);
+        cmdAdicionar.setEnabled(true);//TRUE
+        cmdEditar.setEnabled(false);
+        cmdNovo.setEnabled(false);
+        
+        //Campos exibição
+        txtNome.setEnabled(true);
+        txtSnome.setEnabled(true);
+        txtSenha.setEnabled(true);
+        txtCsenha.setEnabled(true);
+        cmbPerfil.setEnabled(true);
+        
+        
+        cmdnovo = false;
+        txtCodigoUsuario.requestFocusInWindow();
+    }//GEN-LAST:event_cmdEditarActionPerformed
 
     private void cmdNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNovoActionPerformed
         // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO USUARIOS
-
+        
         //Botões exibição
         cmdPrimeiro.setEnabled(false);
         cmdUltimo.setEnabled(false);
@@ -518,7 +487,7 @@ public void setDados(Dados clsdados){
         cmdEditar.setEnabled(false);
         cmdNovo.setEnabled(false);
         cmdDeletar.setEnabled(false);
-
+        
         //Campos exibição
         txtCodigoUsuario.setEnabled(true);
         txtNome.setEnabled(true);
@@ -526,7 +495,7 @@ public void setDados(Dados clsdados){
         txtSenha.setEnabled(true);
         txtCsenha.setEnabled(true);
         cmbPerfil.setEnabled(true);
-
+        
         //Campos Limpos
         txtCodigoUsuario.setText("");
         txtNome.setText("");
@@ -534,32 +503,78 @@ public void setDados(Dados clsdados){
         txtSenha.setText("");
         txtCsenha.setText("");
         cmbPerfil.setSelectedIndex(0);
-
+        
         cmdnovo = true;
-
+        
         txtCodigoUsuario.requestFocusInWindow();
         CarregarTable();
     }//GEN-LAST:event_cmdNovoActionPerformed
+
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
+        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO USUARIOS
+        
+        //botões exibição
+        cmdPrimeiro.setEnabled(true);
+        cmdUltimo.setEnabled(true);
+        cmdProximo.setEnabled(true);
+        cmdAnterior.setEnabled(true);
+        cmdCancelar.setEnabled(false);
+        cmdPesquisar.setEnabled(true);
+        cmdAdicionar.setEnabled(false);
+        cmdEditar.setEnabled(true);
+        cmdNovo.setEnabled(true);
+        
+        
+        //Campos exibição
+        txtCodigoUsuario.setEnabled(false);
+        txtNome.setEnabled(false);
+        txtSnome.setEnabled(false);
+        txtSenha.setEnabled(false);
+        txtCsenha.setEnabled(false);
+        cmbPerfil.setEnabled(false);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSenhaActionPerformed
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
-    private void cmbPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbPerfilActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
+        
         visualizarCadastros();
         CarregarTable();
-    }//GEN-LAST:event_formWindowOpened
-  
-    
-    private void visualizarCadastros(){
+    }//GEN-LAST:event_formInternalFrameOpened
+
+    private void cmdUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUltimoActionPerformed
+        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO USUARIOS
+        usuarioatual = clsdados.Nusuarios()-1;
+        visualizarCadastros();
+    }//GEN-LAST:event_cmdUltimoActionPerformed
+
+    private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
+        // 
+        usuarioatual ++;
+        if (usuarioatual == clsdados.Nusuarios()) {
+            usuarioatual=0;
+        }
+        visualizarCadastros();
+    }//GEN-LAST:event_cmdProximoActionPerformed
+
+    private void cmdDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeletarActionPerformed
+        // ESTE É O CODIGO DO BOTÃO DELETAR
+        
+        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DLETAR ESTE CADASTRO");
+        
+        if (Del !=0) {
+            return;
+        }
+        String msg;
+        msg = clsdados.DeletarUsuario(usuarioatual);
+        JOptionPane.showMessageDialog(rootPane, msg);
+            usuarioatual=0;
+            visualizarCadastros();
+            CarregarTable();
+    }//GEN-LAST:event_cmdDeletarActionPerformed
+     private void visualizarCadastros(){
         txtCodigoUsuario.setText(clsdados.getUsuarios()[usuarioatual].getCodusuario());
         txtNome.setText(clsdados.getUsuarios()[usuarioatual].getNome());
         txtSnome.setText(clsdados.getUsuarios()[usuarioatual].getSnome());
@@ -568,7 +583,7 @@ public void setDados(Dados clsdados){
         cmbPerfil.setSelectedItem(clsdados.getUsuarios()[usuarioatual].getPerfil());
     }
 
-    private void CarregarTable(){
+     private void CarregarTable(){
          String titulocabecalho[]={"Cod Usuario","Nome","Sobrenome","Perfil"};
          String RegCadastro[] = new String [4];
          Usertable= new DefaultTableModel(null,titulocabecalho);
@@ -576,64 +591,15 @@ public void setDados(Dados clsdados){
              RegCadastro[0]= clsdados.getUsuarios()[i].getCodusuario();
               RegCadastro[1]= clsdados.getUsuarios()[i].getNome();
                RegCadastro[2]= clsdados.getUsuarios()[i].getSnome();
-                RegCadastro[3]= Perfil ( clsdados.getUsuarios()[i].getPerfil());
+                RegCadastro[3]= clsdados.getUsuarios()[i].getPerfil();
                 
                 Usertable.addRow(RegCadastro);    
          }
          Mtable.setModel(Usertable);
      }
-    
-    private String Perfil(int idperfil){
-            if(idperfil == 1){
-                return "ADMINISTRADOR";
-                
-        }else{
-                return "FUNCIONARIO";
-                }
-  }
-    
-    
-    
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmUsuario().setVisible(true);
-                
-            }
-        });
-    }
-
+     
+     
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Mtable;
     private javax.swing.JComboBox<String> cmbPerfil;

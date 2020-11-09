@@ -28,15 +28,15 @@ public class Dados {
         Usuarios musuario;
         
         //Criando Usuario
-        musuario = new Usuarios("carlos", "Carlos", "Lima", "123", 1);
+        musuario = new Usuarios("carlos", "Carlos", "Lima", "123", "1");
         musuarios[countusuario] = musuario;
         countusuario++;
         
-        musuario = new Usuarios("Mike", "Mike", "Sista", "123", 2);
+        musuario = new Usuarios("Mike", "Mike", "Sista", "123", "2");
         musuarios[countusuario] = musuario;
         countusuario++;
         
-        musuario = new Usuarios("Joana", "Joana", "Dark", "123", 2);
+        musuario = new Usuarios("Joana", "Joana", "Dark", "123", "2");
         musuarios[countusuario] = musuario;
         countusuario++;
     

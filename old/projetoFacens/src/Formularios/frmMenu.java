@@ -174,7 +174,8 @@ public void setDados(Dados clsdados){
         // ESTE É O CÓDIGO DO BOTÃO USUARIO NA BARRA DE MENU
         frmUsuario fusuario = new frmUsuario();
         fusuario.setDados(clsdados);
-        fusuario.setVisible(true);
+        DeskPainel.add (fusuario);
+        fusuario.show();
         
         
     }//GEN-LAST:event_mnarquivo_usuariosActionPerformed
@@ -191,15 +192,16 @@ public void setDados(Dados clsdados){
         // CÓDIGO DO BOTÃO CLIENTES NA BARRA DE MENU
         frmClientes fclientes = new frmClientes();
         fclientes.setDados(clsdados);
-        fclientes.setVisible(true);
+        DeskPainel.add (fclientes);
+        fclientes.show();
     }//GEN-LAST:event_mnarquivo_clientesActionPerformed
 
     private void mnarquivo_produtosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_produtosActionPerformed
         // ESTE É O CÓDIGO DO BOTÃO PRODUTO NA BARRA DE MENU
         frmProdutos fprodutos = new frmProdutos();
         fprodutos.setDados(clsdados);
-        fprodutos.setVisible(true);
-        
+        DeskPainel.add (fprodutos);
+        fprodutos.show();
     }//GEN-LAST:event_mnarquivo_produtosActionPerformed
 
     /**

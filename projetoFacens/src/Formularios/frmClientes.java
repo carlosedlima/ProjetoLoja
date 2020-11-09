@@ -1,110 +1,184 @@
 package Formularios;
 
+
 import Classes.Clientes;
-import Classes.Dados;
-import Classes.Utilidades;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import Classes.Dados;
 import javax.swing.table.DefaultTableModel;
 
-public class frmClientes extends javax.swing.JInternalFrame {
+public class frmClientes extends javax.swing.JFrame {
 
 private Dados clsdados;
 private int clienteAtual=0;
 private boolean cmdnovo = false;
 private DefaultTableModel Usertable;
-
-//Puxa os dados da classe DADOS 
+    
 public void setDados(Dados clsdados){
     this.clsdados = clsdados;
 }
-
+    
     public frmClientes() {
         initComponents();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         txtCodigoCliente = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        cmbidentifica = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        txtNomeC = new javax.swing.JTextField();
+        txtSobrenomeC = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
+        txtTelefone = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        calNascimento = new com.toedter.calendar.JDateChooser();
         cmbCidade = new javax.swing.JComboBox<>();
-        cmdPesquisar = new javax.swing.JButton();
-        cmdAnterior = new javax.swing.JButton();
-        cmdProximo = new javax.swing.JButton();
-        cmdUltimo = new javax.swing.JButton();
-        cmdPrimeiro = new javax.swing.JButton();
-        cmdAdicionar = new javax.swing.JButton();
-        cmdEditar = new javax.swing.JButton();
-        cmdNovo = new javax.swing.JButton();
-        cmdCancelar = new javax.swing.JButton();
-        cmdDeletar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        calData = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
-        txtSobrenomeC = new javax.swing.JTextField();
-        txtTelefone = new javax.swing.JTextField();
-        txtEndereco = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        txtNomeC = new javax.swing.JTextField();
+        cmdDeletar = new javax.swing.JButton();
+        cmdCancelar = new javax.swing.JButton();
+        cmdUltimo = new javax.swing.JButton();
+        cmdAdicionar = new javax.swing.JButton();
+        cmdProximo = new javax.swing.JButton();
+        cmdNovo = new javax.swing.JButton();
+        cmdAnterior = new javax.swing.JButton();
+        cmdEditar = new javax.swing.JButton();
+        cmdPrimeiro = new javax.swing.JButton();
+        cmdPesquisar = new javax.swing.JButton();
+        txtEmail = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        cmbidentifica = new javax.swing.JComboBox<>();
-        calData = new org.netbeans.modules.form.InvalidComponent();
-        calNascimento = new org.netbeans.modules.form.InvalidComponent();
 
-        setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setTitle("Cadastro Cliente :");
-        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
-            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
-            }
-            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
-                formInternalFrameOpened(evt);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
 
-        jLabel1.setText("Cod Cliente");
+        jPanel1.setBackground(new java.awt.Color(32, 34, 37));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(602, 1194));
+        jPanel1.setName(""); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(602, 1194));
+        jPanel1.setLayout(null);
 
-        jLabel2.setText("identificação");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ID");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 20, 20, 20);
 
-        jLabel3.setText("Nome");
-
-        jLabel4.setText("Teleffone");
-
+        txtCodigoCliente.setBackground(new java.awt.Color(51, 61, 71));
+        txtCodigoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigoCliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCodigoCliente.setEnabled(false);
         txtCodigoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoClienteActionPerformed(evt);
             }
         });
+        jPanel1.add(txtCodigoCliente);
+        txtCodigoCliente.setBounds(40, 20, 110, 20);
 
-        txtEmail.setEnabled(false);
-        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+        cmbidentifica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione ID", "CPF", "RG", "CNPJ", " " }));
+        cmbidentifica.setEnabled(false);
+        cmbidentifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEmailActionPerformed(evt);
+                cmbidentificaActionPerformed(evt);
             }
         });
+        jPanel1.add(cmbidentifica);
+        cmbidentifica.setBounds(240, 20, 129, 20);
 
-        jLabel6.setText("Data");
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("identificação:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(160, 20, 80, 20);
+
+        txtNomeC.setBackground(new java.awt.Color(51, 61, 71));
+        txtNomeC.setForeground(new java.awt.Color(255, 255, 255));
+        txtNomeC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtNomeC.setEnabled(false);
+        txtNomeC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtNomeC);
+        txtNomeC.setBounds(20, 60, 490, 20);
+
+        txtSobrenomeC.setBackground(new java.awt.Color(51, 61, 71));
+        txtSobrenomeC.setForeground(new java.awt.Color(255, 255, 255));
+        txtSobrenomeC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtSobrenomeC.setEnabled(false);
+        txtSobrenomeC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSobrenomeCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtSobrenomeC);
+        txtSobrenomeC.setBounds(20, 100, 490, 20);
+
+        txtEndereco.setBackground(new java.awt.Color(51, 61, 71));
+        txtEndereco.setForeground(new java.awt.Color(255, 255, 255));
+        txtEndereco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEndereco.setEnabled(false);
+        txtEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEnderecoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEndereco);
+        txtEndereco.setBounds(20, 140, 490, 20);
+
+        txtTelefone.setBackground(new java.awt.Color(51, 61, 71));
+        txtTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        txtTelefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtTelefone.setEnabled(false);
+        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefoneActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtTelefone);
+        txtTelefone.setBounds(80, 170, 110, 20);
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Telefone:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 170, 60, 20);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Endereco:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(20, 120, 60, 14);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("S-Nome:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 80, 50, 14);
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Nome:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(20, 40, 50, 14);
+
+        calNascimento.setBackground(new java.awt.Color(51, 61, 71));
+        calNascimento.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(calNascimento);
+        calNascimento.setBounds(250, 170, 87, 20);
 
         cmbCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Cidade", "Sorocaba", "São Paulo", "Campinas" }));
         cmbCidade.setEnabled(false);
@@ -113,79 +187,26 @@ public void setDados(Dados clsdados){
                 cmbCidadeActionPerformed(evt);
             }
         });
+        jPanel1.add(cmbCidade);
+        cmbCidade.setBounds(400, 170, 106, 20);
 
-        cmdPesquisar.setText("Procurar");
-        cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdPesquisarActionPerformed(evt);
-            }
-        });
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Cidade:");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(350, 170, 50, 20);
 
-        cmdAnterior.setText("Anterior");
-        cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAnteriorActionPerformed(evt);
-            }
-        });
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Data:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(390, 20, 30, 20);
 
-        cmdProximo.setText("Proximo");
-        cmdProximo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdProximoActionPerformed(evt);
-            }
-        });
+        calData.setBackground(new java.awt.Color(51, 61, 71));
+        calData.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(calData);
+        calData.setBounds(420, 20, 87, 20);
 
-        cmdUltimo.setText("Ultimo");
-        cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdUltimoActionPerformed(evt);
-            }
-        });
-
-        cmdPrimeiro.setText("Primeiro");
-        cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdPrimeiroActionPerformed(evt);
-            }
-        });
-
-        cmdAdicionar.setText("Adicionar");
-        cmdAdicionar.setEnabled(false);
-        cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdAdicionarActionPerformed(evt);
-            }
-        });
-
-        cmdEditar.setText("Editar");
-        cmdEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdEditarActionPerformed(evt);
-            }
-        });
-
-        cmdNovo.setText("Novo");
-        cmdNovo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdNovoActionPerformed(evt);
-            }
-        });
-
-        cmdCancelar.setText("Cancelar");
-        cmdCancelar.setEnabled(false);
-        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdCancelarActionPerformed(evt);
-            }
-        });
-
-        cmdDeletar.setText("Deletar");
-        cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdDeletarActionPerformed(evt);
-            }
-        });
-
+        Mtable.setBackground(new java.awt.Color(51, 61, 71));
+        Mtable.setForeground(new java.awt.Color(255, 255, 255));
         Mtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -200,187 +221,458 @@ public void setDados(Dados clsdados){
         Mtable.setEnabled(false);
         jScrollPane1.setViewportView(Mtable);
 
-        txtSobrenomeC.setEnabled(false);
-        txtSobrenomeC.addActionListener(new java.awt.event.ActionListener() {
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 260, 560, 295);
+
+        cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
+        cmdDeletar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdDeletar.setText("Deletar");
+        cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSobrenomeCActionPerformed(evt);
+                cmdDeletarActionPerformed(evt);
             }
         });
+        jPanel1.add(cmdDeletar);
+        cmdDeletar.setBounds(520, 150, 60, 23);
 
-        txtTelefone.setEnabled(false);
-        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+        cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
+        cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdCancelar.setText("Cancelar");
+        cmdCancelar.setEnabled(false);
+        cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefoneActionPerformed(evt);
+                cmdCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(cmdCancelar);
+        cmdCancelar.setBounds(520, 180, 60, 23);
 
-        txtEndereco.setEnabled(false);
-        txtEndereco.addActionListener(new java.awt.event.ActionListener() {
+        cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
+        cmdUltimo.setForeground(new java.awt.Color(255, 255, 255));
+        cmdUltimo.setText("Ultimo");
+        cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEnderecoActionPerformed(evt);
+                cmdUltimoActionPerformed(evt);
             }
         });
+        jPanel1.add(cmdUltimo);
+        cmdUltimo.setBounds(270, 560, 70, 23);
 
-        jLabel5.setText("S-Nome");
-
-        jLabel7.setText("Endereco");
-
-        txtNomeC.setEnabled(false);
-        txtNomeC.addActionListener(new java.awt.event.ActionListener() {
+        cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
+        cmdAdicionar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdAdicionar.setText("Adicionar");
+        cmdAdicionar.setEnabled(false);
+        cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeCActionPerformed(evt);
+                cmdAdicionarActionPerformed(evt);
             }
         });
+        jPanel1.add(cmdAdicionar);
+        cmdAdicionar.setBounds(520, 120, 60, 23);
 
+        cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
+        cmdProximo.setForeground(new java.awt.Color(255, 255, 255));
+        cmdProximo.setText("Proximo");
+        cmdProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdProximoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdProximo);
+        cmdProximo.setBounds(190, 560, 70, 23);
+
+        cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
+        cmdNovo.setForeground(new java.awt.Color(255, 255, 255));
+        cmdNovo.setText("Novo");
+        cmdNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdNovoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdNovo);
+        cmdNovo.setBounds(520, 60, 60, 23);
+
+        cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
+        cmdAnterior.setForeground(new java.awt.Color(255, 255, 255));
+        cmdAnterior.setText("Anterior");
+        cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAnteriorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdAnterior);
+        cmdAnterior.setBounds(120, 560, 70, 23);
+
+        cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
+        cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdEditar.setText("Editar");
+        cmdEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdEditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdEditar);
+        cmdEditar.setBounds(520, 90, 60, 23);
+
+        cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
+        cmdPrimeiro.setForeground(new java.awt.Color(255, 255, 255));
+        cmdPrimeiro.setText("Primeiro");
+        cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdPrimeiroActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdPrimeiro);
+        cmdPrimeiro.setBounds(30, 560, 83, 23);
+
+        cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
+        cmdPesquisar.setForeground(new java.awt.Color(255, 255, 255));
+        cmdPesquisar.setText("Procurar");
+        cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdPesquisarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdPesquisar);
+        cmdPesquisar.setBounds(500, 560, 73, 23);
+
+        txtEmail.setBackground(new java.awt.Color(51, 61, 71));
+        txtEmail.setForeground(new java.awt.Color(255, 255, 255));
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtEmail.setEnabled(false);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtEmail);
+        txtEmail.setBounds(20, 220, 490, 20);
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("E-mail");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(20, 200, 50, 14);
 
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("D-Nasc:");
-
-        jLabel10.setText("Cidade");
-
-        cmbidentifica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione ID", "CPF", "RG", "CNPJ", " " }));
-        cmbidentifica.setEnabled(false);
-        cmbidentifica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbidentificaActionPerformed(evt);
-            }
-        });
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(200, 170, 50, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(9, 9, 9)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(calNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(cmbidentifica, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(calData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtNomeC, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cmdPesquisar)
-                    .addComponent(cmdPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(cmdEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmdNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cmdAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmdProximo)
-                        .addGap(14, 14, 14)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(cmdUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmdAdicionar))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmdDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cmdCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(txtCodigoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel2)
-                        .addComponent(cmbidentifica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(calData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel10)
-                        .addComponent(cmbCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(calNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmdPesquisar)
-                    .addComponent(cmdEditar)
-                    .addComponent(cmdNovo)
-                    .addComponent(cmdAdicionar)
-                    .addComponent(cmdCancelar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmdPrimeiro)
-                    .addComponent(cmdAnterior)
-                    .addComponent(cmdProximo)
-                    .addComponent(cmdUltimo)
-                    .addComponent(cmdDeletar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtCodigoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoClienteActionPerformed
+
+    private void cmbidentificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbidentificaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbidentificaActionPerformed
+
+    private void txtNomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeCActionPerformed
+
+    private void txtSobrenomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSobrenomeCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSobrenomeCActionPerformed
+
+    private void txtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEnderecoActionPerformed
+
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneActionPerformed
+
     private void cmbCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbCidadeActionPerformed
+
+    private void cmdDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeletarActionPerformed
+        // ESTE É O CODIGO DO BOTÃO DELETAR
+
+        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DELETAR ESTE CADASTRO?");
+
+        if (Del !=0) {
+            return;
+        }
+        String msg;
+        msg = clsdados.DeletarCliente(clienteAtual);
+        JOptionPane.showMessageDialog(rootPane, msg);
+        clienteAtual=0;
+        visualizarCadastros();
+        CarregarTable();
+    }//GEN-LAST:event_cmdDeletarActionPerformed
+
+    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
+        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO USUARIOS
+
+        //botões exibição
+        cmdPrimeiro.setEnabled(true);
+        cmdUltimo.setEnabled(true);
+        cmdProximo.setEnabled(true);
+        cmdAnterior.setEnabled(true);
+        cmdCancelar.setEnabled(false);
+        cmdPesquisar.setEnabled(true);
+        cmdAdicionar.setEnabled(false);
+        cmdEditar.setEnabled(true);
+        cmdNovo.setEnabled(true);
+
+        //Campos exibição
+        txtCodigoCliente.setEnabled(false);
+        txtTelefone.setEnabled(false);
+        txtEmail.setEnabled(false);
+        txtNomeC.setEnabled(false);
+        txtSobrenomeC.setEnabled(false);
+        txtEndereco.setEnabled(false);
+        cmbCidade.setEnabled(false);
+        cmbidentifica.setEnabled(false);
+        calNascimento.setEnabled(false);
+        calData.setEnabled(false);
+    }//GEN-LAST:event_cmdCancelarActionPerformed
+
+    private void cmdUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUltimoActionPerformed
+        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO CLIENTES
+        clienteAtual = clsdados.Nclientes()-1;
+        visualizarCadastros();
+    }//GEN-LAST:event_cmdUltimoActionPerformed
+
+    private void cmdAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAdicionarActionPerformed
+        //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE USUARIOS
+
+        //CODIGO DE CLIENTE
+        if (txtCodigoCliente.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O CODIGO PARA REALIZAR O CADASTRO");
+            txtCodigoCliente.requestFocusInWindow();
+            return;
+        }
+        //CIDADE
+        if (cmbCidade.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A TAXA PARA REALIZAR O CADASTRO");
+            cmbCidade.requestFocusInWindow();
+            return;
+        }
+
+        //NOME
+        if (txtNomeC.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O NOME PARA REALIZAR O CADASTRO");
+            txtNomeC.requestFocusInWindow();
+            return;
+        }
+
+        //SOBRENOME
+        if (txtSobrenomeC.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O SOBRENOME PARA REALIZAR O CADASTRO");
+            txtSobrenomeC.requestFocusInWindow();
+            return;
+        }
+        //EMAIL
+        if (txtEmail.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O EMAIL PARA REALIZAR O CADASTRO");
+            txtEmail.requestFocusInWindow();
+            return;
+        }
+        //ENDERECO
+        if (txtEndereco.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O ENDEREÇO PARA REALIZAR O CADASTRO");
+            txtEndereco.requestFocusInWindow();
+            return;
+        }
+        //TELEFONE
+        if (txtTelefone.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O ENDEREÇO PARA REALIZAR O CADASTRO");
+            txtTelefone.requestFocusInWindow();
+            return;
+        }
+        // IDENTIFICAÇÃO
+        if (cmbidentifica.getSelectedIndex()==0){
+            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A IDENTIFICAÇÃO PARA REALIZAR O CADASTRO");
+            cmbidentifica.requestFocusInWindow();
+            return;
+        }
+        if(calNascimento.getDate().before(new Date())){
+            JOptionPane.showMessageDialog(rootPane, "DADOS DA DATA DE NASCIMENTO NÃO CONFERE");
+            calNascimento.requestFocusInWindow();
+            return;
+        }
+
+        int poslinha = clsdados.LinhaCliente(txtCodigoCliente.getText());
+        if(cmdnovo){
+            if (poslinha != -1) {
+                JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE CLIENTE JA EXISTE");
+                txtCodigoCliente.requestFocusInWindow();
+                return;
+            }else{
+                if (poslinha != -1) {
+                    JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE CLIENTE NÂO EXISTE");
+                    txtCodigoCliente.requestFocusInWindow();
+                    return;
+                }
+            }
+        }
+
+        Clientes mCliente = new Clientes(txtCodigoCliente.getText(),
+            cmbidentifica.getSelectedIndex(),txtNomeC.getText(),
+            txtSobrenomeC.getText(),txtEndereco.getText(),
+            cmbCidade.getSelectedIndex(),txtTelefone.getText(),
+            calData.getDate(),calNascimento.getDate(),txtEmail.getText());//OBJETO mCliente quebrado em linhas
+        String msg;
+
+        if(cmdnovo){
+
+            msg = clsdados.CadastroCliente(mCliente);
+
+        }else{
+
+            msg = clsdados.EditarCliente(mCliente, poslinha);
+
+        }
+
+        JOptionPane.showMessageDialog(rootPane, msg);
+
+        // ESTE É O CÓDIGO DO BOTÃO SALVAR DO FORMULARÍO CADASTRO USUARIOS
+
+        //Botões exibição
+        cmdPrimeiro.setEnabled(true);
+        cmdUltimo.setEnabled(true);
+        cmdProximo.setEnabled(true);
+        cmdAnterior.setEnabled(true);
+        cmdCancelar.setEnabled(false);
+        cmdPesquisar.setEnabled(true);
+        cmdAdicionar.setEnabled(false);
+        cmdEditar.setEnabled(true);
+        cmdNovo.setEnabled(true);
+        cmdDeletar.setEnabled(true);
+
+        //Campos exibição
+        txtCodigoCliente.setEnabled(false);
+        txtTelefone.setEnabled(false);
+        txtEmail.setEnabled(false);
+        txtNomeC.setEnabled(false);
+        txtSobrenomeC.setEnabled(false);
+        txtEndereco.setEnabled(false);
+        cmbCidade.setEnabled(false);
+        cmbidentifica.setEnabled(false);
+        calNascimento.setEnabled(false);
+        calData.setEnabled(false);
+
+    }//GEN-LAST:event_cmdAdicionarActionPerformed
+
+    private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
+        // BOTÃO PROXIMO ITEM
+        clienteAtual ++;
+        if (clienteAtual == clsdados.Nclientes()) {
+            clienteAtual=0;
+        }
+        visualizarCadastros();
+    }//GEN-LAST:event_cmdProximoActionPerformed
+
+    private void cmdNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNovoActionPerformed
+        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO USUARIOS
+
+        //Botões exibição
+        cmdPrimeiro.setEnabled(false);
+        cmdUltimo.setEnabled(false);
+        cmdProximo.setEnabled(false);
+        cmdAnterior.setEnabled(false);
+        cmdCancelar.setEnabled(true);//TRUE
+        cmdPesquisar.setEnabled(false);
+        cmdAdicionar.setEnabled(true);//TRUE
+        cmdEditar.setEnabled(false);
+        cmdNovo.setEnabled(false);
+        cmdDeletar.setEnabled(false);
+
+        //Campos exibição
+        txtCodigoCliente.setEnabled(true);
+        txtTelefone.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtNomeC.setEnabled(true);
+        txtSobrenomeC.setEnabled(true);
+        txtEndereco.setEnabled(true);
+        cmbCidade.setEnabled(true);
+        cmbidentifica.setEnabled(true);
+        calNascimento.setEnabled(true);
+        calData.setEnabled(true);
+
+        //Campos Limpos
+        txtCodigoCliente.setText("");
+        txtTelefone.setText("");
+        txtEmail.setText("");
+        txtNomeC.setText("");
+        txtSobrenomeC.setText("");
+        txtEndereco.setText("");
+        cmbCidade.setSelectedIndex(0);
+        cmbidentifica.setSelectedIndex(0);
+        txtEndereco.setText("");
+        calData.setDate(new Date());
+        calNascimento.setDate(new Date());
+
+        cmdnovo = true;
+
+        txtCodigoCliente.requestFocusInWindow();
+        CarregarTable();
+    }//GEN-LAST:event_cmdNovoActionPerformed
+
+    private void cmdAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAnteriorActionPerformed
+        // CODIGO DO BOTÂO ANTERIOR
+
+        clienteAtual --;
+        if (clienteAtual == -1) {
+            clienteAtual= clsdados.Nclientes()-1;
+        }
+
+        visualizarCadastros();
+
+    }//GEN-LAST:event_cmdAnteriorActionPerformed
+
+    private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
+
+        // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CLIENTES
+
+        //Botões exibição
+        cmdPrimeiro.setEnabled(false);
+        cmdUltimo.setEnabled(false);
+        cmdProximo.setEnabled(false);
+        cmdAnterior.setEnabled(false);
+        cmdCancelar.setEnabled(true);//TRUE
+        cmdPesquisar.setEnabled(false);
+        cmdAdicionar.setEnabled(true);//TRUE
+        cmdEditar.setEnabled(false);
+        cmdNovo.setEnabled(false);
+
+        //Campos exibição
+        txtTelefone.setEnabled(true);
+        txtEmail.setEnabled(true);
+        txtNomeC.setEnabled(true);
+        txtSobrenomeC.setEnabled(true);
+        txtEndereco.setEnabled(true);
+        cmbCidade.setEnabled(true);
+        cmbidentifica.setEnabled(true);
+        calNascimento.setEnabled(true);
+        calData.setEnabled(true);
+
+        cmdnovo = false;
+        cmbidentifica.requestFocusInWindow();
+        CarregarTable();
+    }//GEN-LAST:event_cmdEditarActionPerformed
+
+    private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
+        // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
+        clienteAtual=0;
+        visualizarCadastros();
+    }//GEN-LAST:event_cmdPrimeiroActionPerformed
 
     private void cmdPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPesquisarActionPerformed
         // ESTE CÓDIGO É DO BOTÃO PESQUISAR
@@ -397,319 +689,55 @@ public void setDados(Dados clsdados){
         visualizarCadastros();
     }//GEN-LAST:event_cmdPesquisarActionPerformed
 
-    private void cmdAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAnteriorActionPerformed
-        // CODIGO DO BOTÂO ANTERIOR
-        
-        clienteAtual --;
-        if (clienteAtual == -1) {
-            clienteAtual= clsdados.Nclientes()-1;
-        }
-        
-        visualizarCadastros();
-        
-    }//GEN-LAST:event_cmdAnteriorActionPerformed
-
-    private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
-        // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
-        clienteAtual=0;
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdPrimeiroActionPerformed
-
-    private void cmdAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAdicionarActionPerformed
-        //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE USUARIOS
-        
-        //CODIGO DE CLIENTE
-        if (txtCodigoCliente.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O CODIGO PARA REALIZAR O CADASTRO");
-            txtCodigoCliente.requestFocusInWindow();
-            return;
-        }
-        //CIDADE
-         if (cmbCidade.getSelectedIndex()==0){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A TAXA PARA REALIZAR O CADASTRO");
-            cmbCidade.requestFocusInWindow();
-            return;
-        }
-         
-         //NOME
-          if (txtNomeC.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O NOME PARA REALIZAR O CADASTRO");
-            txtNomeC.requestFocusInWindow();
-            return;
-        }
-          
-        //SOBRENOME  
-          if (txtSobrenomeC.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O SOBRENOME PARA REALIZAR O CADASTRO");
-            txtSobrenomeC.requestFocusInWindow();
-            return;
-        }
-          //EMAIL
-           if (txtEmail.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O EMAIL PARA REALIZAR O CADASTRO");
-            txtEmail.requestFocusInWindow();
-            return;
-        }
-           //ENDERECO
-           if (txtEndereco.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O ENDEREÇO PARA REALIZAR O CADASTRO");
-            txtEndereco.requestFocusInWindow();
-            return;
-        }
-           //TELEFONE
-           if (txtTelefone.getText().equals("")){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO O ENDEREÇO PARA REALIZAR O CADASTRO");
-            txtTelefone.requestFocusInWindow();
-            return;
-        }
-          // IDENTIFICAÇÃO
-           if (cmbidentifica.getSelectedIndex()==0){
-            JOptionPane.showMessageDialog(rootPane,"È NECESSARIO A IDENTIFICAÇÃO PARA REALIZAR O CADASTRO");
-            cmbidentifica.requestFocusInWindow();
-            return;
-        }
-           if(calNascimento.getDate().before(new Date())){
-              JOptionPane.showMessageDialog(rootPane, "DADOS DA DATA DE NASCIMENTO NÃO CONFERE");
-              calNascimento.requestFocusInWindow();
-              return;
-           }
-           
-         int poslinha = clsdados.LinhaCliente(txtCodigoCliente.getText());
-         if(cmdnovo){  
-           if (poslinha != -1) {
-            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE CLIENTE JA EXISTE");
-            txtCodigoCliente.requestFocusInWindow();
-            return;
-        }else{
-           if (poslinha != -1) {
-            JOptionPane.showMessageDialog(rootPane, "ESTE CADASTRO DE CLIENTE NÂO EXISTE");
-            txtCodigoCliente.requestFocusInWindow();
-            return;
-            }
-           }
-         }
-   
-   Clientes mCliente = new Clientes(txtCodigoCliente.getText(),
-           cmbidentifica.getSelectedIndex(),txtNomeC.getText(),
-           txtSobrenomeC.getText(),txtEndereco.getText(),
-           cmbCidade.getSelectedIndex(),txtTelefone.getText(),
-           calData.getDate(),calNascimento.getDate(),txtEmail.getText());//OBJETO mCliente quebrado em linhas
-   String msg;
-   
-   if(cmdnovo){
-       
-        msg = clsdados.CadastroCliente(mCliente);
-        
-   }else{
-       
-        msg = clsdados.EditarCliente(mCliente, poslinha);
-        
-        }
-      
-    JOptionPane.showMessageDialog(rootPane, msg);
-    
-
-        // ESTE É O CÓDIGO DO BOTÃO SALVAR DO FORMULARÍO CADASTRO USUARIOS
-        
-        //Botões exibição
-        cmdPrimeiro.setEnabled(true);
-        cmdUltimo.setEnabled(true);
-        cmdProximo.setEnabled(true);
-        cmdAnterior.setEnabled(true);
-        cmdCancelar.setEnabled(false);
-        cmdPesquisar.setEnabled(true);
-        cmdAdicionar.setEnabled(false);
-        cmdEditar.setEnabled(true);
-        cmdNovo.setEnabled(true);
-        cmdDeletar.setEnabled(true);
-        
-        
-        //Campos exibição
-        txtCodigoCliente.setEnabled(false);
-        txtTelefone.setEnabled(false);
-        txtEmail.setEnabled(false);
-        txtNomeC.setEnabled(false);
-        txtSobrenomeC.setEnabled(false);
-        txtEndereco.setEnabled(false);
-        cmbCidade.setEnabled(false);
-        cmbidentifica.setEnabled(false);
-        calNascimento.setEnabled(false);
-        calData.setEnabled(false);
-        
-       
-    }//GEN-LAST:event_cmdAdicionarActionPerformed
-    
-    private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
-        
-    // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CLIENTES
-        
-        //Botões exibição
-        cmdPrimeiro.setEnabled(false);
-        cmdUltimo.setEnabled(false);
-        cmdProximo.setEnabled(false);
-        cmdAnterior.setEnabled(false);
-        cmdCancelar.setEnabled(true);//TRUE
-        cmdPesquisar.setEnabled(false);
-        cmdAdicionar.setEnabled(true);//TRUE
-        cmdEditar.setEnabled(false);
-        cmdNovo.setEnabled(false);
-        
-        //Campos exibição
-        txtTelefone.setEnabled(true);
-        txtEmail.setEnabled(true);
-        txtNomeC.setEnabled(true);
-        txtSobrenomeC.setEnabled(true);
-        txtEndereco.setEnabled(true);
-        cmbCidade.setEnabled(true);
-        cmbidentifica.setEnabled(true);
-        calNascimento.setEnabled(true);
-        calData.setEnabled(true);
-        
-        
-        cmdnovo = false;
-        cmbidentifica.requestFocusInWindow();
-        CarregarTable();
-    }//GEN-LAST:event_cmdEditarActionPerformed
-
-    private void cmdNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNovoActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO USUARIOS
-        
-        //Botões exibição
-        cmdPrimeiro.setEnabled(false);
-        cmdUltimo.setEnabled(false);
-        cmdProximo.setEnabled(false);
-        cmdAnterior.setEnabled(false);
-        cmdCancelar.setEnabled(true);//TRUE
-        cmdPesquisar.setEnabled(false);
-        cmdAdicionar.setEnabled(true);//TRUE
-        cmdEditar.setEnabled(false);
-        cmdNovo.setEnabled(false);
-        cmdDeletar.setEnabled(false);
-        
-        //Campos exibição
-        txtCodigoCliente.setEnabled(true);
-        txtTelefone.setEnabled(true);
-        txtEmail.setEnabled(true);
-        txtNomeC.setEnabled(true);
-        txtSobrenomeC.setEnabled(true);
-        txtEndereco.setEnabled(true);
-        cmbCidade.setEnabled(true);
-        cmbidentifica.setEnabled(true);
-        calNascimento.setEnabled(true);
-        calData.setEnabled(true);
-        
-        //Campos Limpos
-        txtCodigoCliente.setText("");
-        txtTelefone.setText("");
-        txtEmail.setText("");
-        txtNomeC.setText("");
-        txtSobrenomeC.setText("");
-        txtEndereco.setText("");
-        cmbCidade.setSelectedIndex(0);
-        cmbidentifica.setSelectedIndex(0);
-        txtEndereco.setText("");
-        calData.setDate(new Date());
-        calNascimento.setDate(new Date());
-        
-        cmdnovo = true;
-        
-        txtCodigoCliente.requestFocusInWindow();
-        CarregarTable();
-    }//GEN-LAST:event_cmdNovoActionPerformed
-
-    private void cmdCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelarActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO CANCELAR DO FORMULARÍO CADASTRO USUARIOS
-        
-        //botões exibição
-        cmdPrimeiro.setEnabled(true);
-        cmdUltimo.setEnabled(true);
-        cmdProximo.setEnabled(true);
-        cmdAnterior.setEnabled(true);
-        cmdCancelar.setEnabled(false);
-        cmdPesquisar.setEnabled(true);
-        cmdAdicionar.setEnabled(false);
-        cmdEditar.setEnabled(true);
-        cmdNovo.setEnabled(true);
-        
-        
-        //Campos exibição
-        txtCodigoCliente.setEnabled(false);
-        txtTelefone.setEnabled(false);
-        txtEmail.setEnabled(false);
-        txtNomeC.setEnabled(false);
-        txtSobrenomeC.setEnabled(false);
-        txtEndereco.setEnabled(false);
-        cmbCidade.setEnabled(false);
-        cmbidentifica.setEnabled(false);
-        calNascimento.setEnabled(false);
-        calData.setEnabled(false);
-    }//GEN-LAST:event_cmdCancelarActionPerformed
-
-    private void formInternalFrameOpened(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameOpened
-        
-        visualizarCadastros();
-        CarregarTable();
-    }//GEN-LAST:event_formInternalFrameOpened
-
-    private void cmdUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdUltimoActionPerformed
-        // ESTE È O CODIGO DO BOTÃO ULTIMO CADASTRO DO FORMULARIO CLIENTES
-        clienteAtual = clsdados.Nclientes()-1;
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdUltimoActionPerformed
-
-    private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
-        // BOTÃO PROXIMO ITEM
-        clienteAtual ++;
-        if (clienteAtual == clsdados.Nclientes()) {
-            clienteAtual=0;
-        }
-        visualizarCadastros();
-    }//GEN-LAST:event_cmdProximoActionPerformed
-
-    private void cmdDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeletarActionPerformed
-        // ESTE É O CODIGO DO BOTÃO DELETAR
-        
-        int Del = JOptionPane.showConfirmDialog(rootPane, "DESEJA REALMENTE DELETAR ESTE CADASTRO?");
-        
-        if (Del !=0) {
-            return;
-        }
-        String msg;
-        msg = clsdados.DeletarCliente(clienteAtual);
-        JOptionPane.showMessageDialog(rootPane, msg);
-            clienteAtual=0;
-            visualizarCadastros();
-            CarregarTable();
-    }//GEN-LAST:event_cmdDeletarActionPerformed
-
-    private void txtCodigoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoClienteActionPerformed
-
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtSobrenomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSobrenomeCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSobrenomeCActionPerformed
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        visualizarCadastros();
+        CarregarTable();
+    }//GEN-LAST:event_formWindowOpened
 
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(frmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(frmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(frmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(frmClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
 
-    private void txtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEnderecoActionPerformed
-
-    private void txtNomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeCActionPerformed
-
-    private void cmbidentificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbidentificaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbidentificaActionPerformed
-     private void visualizarCadastros(){
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new frmClientes().setVisible(true);
+            }
+        });
+    }
+    
+    /*
+    OS CODIGOS A BAIXO POR ENQUANTO SÃO TEMPORARIOS ELES SÃO RESPONSAVEIS DE CARREGAR OS DADOS NO FORMULARIO E
+    NAS TABELAS POR TANTO NÃO HÁ NECESSIDADE DE ALTERALAS ATÉ A IMPLEMENTAÇÃO DO BD
+    */
+    
+    
+    private void visualizarCadastros(){
         txtCodigoCliente.setText(clsdados.getClientes()[clienteAtual].getCodigoCliente());
         txtNomeC.setText(clsdados.getClientes()[clienteAtual].getNome());
         txtSobrenomeC.setText(clsdados.getClientes()[clienteAtual].getSobrenome());
@@ -722,8 +750,8 @@ public void setDados(Dados clsdados){
         calNascimento.setDate(clsdados.getClientes()[clienteAtual].getDataNasc());
         
     }
-
-     private void CarregarTable(){
+    
+    private void CarregarTable(){
          String titulocabecalho[]={"Cod Cliente","Identif","Data","Nome","Sobrenome","End","Tel","D-Nasc","Cidade","E-mail"};
          String RegCadastro[] = new String [10];
          Usertable= new DefaultTableModel(null,titulocabecalho);
@@ -765,10 +793,15 @@ public void setDados(Dados clsdados){
          }
      }
      
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Mtable;
-    private org.netbeans.modules.form.InvalidComponent calData;
-    private org.netbeans.modules.form.InvalidComponent calNascimento;
+    private com.toedter.calendar.JDateChooser calData;
+    private com.toedter.calendar.JDateChooser calNascimento;
     private javax.swing.JComboBox<String> cmbCidade;
     private javax.swing.JComboBox<String> cmbidentifica;
     private javax.swing.JButton cmdAdicionar;
@@ -791,6 +824,7 @@ public void setDados(Dados clsdados){
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCodigoCliente;
     private javax.swing.JTextField txtEmail;
@@ -799,4 +833,5 @@ public void setDados(Dados clsdados){
     private javax.swing.JTextField txtSobrenomeC;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
+
 }

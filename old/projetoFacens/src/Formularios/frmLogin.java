@@ -40,9 +40,9 @@ public void setDados(Dados clsdados){
         txtViewSenha = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
         erroSenha = new javax.swing.JLabel();
+        cmdSair = new javax.swing.JButton();
+        cmdLogin = new javax.swing.JButton();
         CheckBox = new javax.swing.JCheckBox();
-        BLogin = new javax.swing.JButton();
-        BSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lgin");
@@ -59,7 +59,7 @@ public void setDados(Dados clsdados){
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Login");
         jPanel3.add(jLabel1);
-        jLabel1.setBounds(10, 10, 60, 30);
+        jLabel1.setBounds(30, 20, 250, 30);
 
         label1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,6 +130,32 @@ public void setDados(Dados clsdados){
         jPanel3.add(erroSenha);
         erroSenha.setBounds(80, 120, 280, 20);
 
+        cmdSair.setBackground(new java.awt.Color(51, 61, 71));
+        cmdSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdSair.setForeground(new java.awt.Color(255, 255, 255));
+        cmdSair.setText("Sair");
+        cmdSair.setBorder(null);
+        cmdSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdSairActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdSair);
+        cmdSair.setBounds(80, 140, 84, 30);
+
+        cmdLogin.setBackground(new java.awt.Color(51, 61, 71));
+        cmdLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cmdLogin.setForeground(new java.awt.Color(255, 255, 255));
+        cmdLogin.setText("Login");
+        cmdLogin.setBorder(null);
+        cmdLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLoginActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmdLogin);
+        cmdLogin.setBounds(170, 140, 88, 30);
+
         CheckBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         CheckBox.setForeground(new java.awt.Color(255, 255, 255));
         CheckBox.setText("ver senha");
@@ -142,30 +168,6 @@ public void setDados(Dados clsdados){
         });
         jPanel3.add(CheckBox);
         CheckBox.setBounds(260, 140, 90, 23);
-
-        BLogin.setBackground(new java.awt.Color(51, 61, 71));
-        BLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        BLogin.setForeground(new java.awt.Color(255, 255, 255));
-        BLogin.setText("Login");
-        BLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BLoginActionPerformed(evt);
-            }
-        });
-        jPanel3.add(BLogin);
-        BLogin.setBounds(170, 140, 80, 30);
-
-        BSair.setBackground(new java.awt.Color(51, 61, 71));
-        BSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        BSair.setForeground(new java.awt.Color(255, 255, 255));
-        BSair.setText("Sair");
-        BSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BSairActionPerformed(evt);
-            }
-        });
-        jPanel3.add(BSair);
-        BSair.setBounds(80, 140, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,6 +189,30 @@ public void setDados(Dados clsdados){
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
+
+    private void cmdSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSairActionPerformed
+        //Botão para saida do Login
+        this.dispose();
+    }//GEN-LAST:event_cmdSairActionPerformed
+
+    private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
+       // Botão login
+       
+       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){ 
+       }else{    
+           erroSenha.setVisible(true);
+           txtUsuario.setText("");
+           txtSenha.setText("");
+           txtUsuario.requestFocusInWindow();
+           return;
+       }
+       
+       frmMenu frmmenu = new frmMenu();
+       this.setVisible(false);
+       frmmenu.setDados(clsdados);
+      // frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       frmmenu.setVisible(true);
+    }//GEN-LAST:event_cmdLoginActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
@@ -215,29 +241,6 @@ if(CheckBox.isSelected()){
     private void txtViewSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtViewSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtViewSenhaActionPerformed
-
-    private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
-       // Botão login
-       
-       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){ 
-       }else{    
-           erroSenha.setVisible(true);
-           txtUsuario.setText("");
-           txtSenha.setText("");
-           txtUsuario.requestFocusInWindow();
-           return;
-       }
-       
-       frmMenu frmmenu = new frmMenu();
-       this.setVisible(false);
-       frmmenu.setDados(clsdados);
-       // frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-       frmmenu.setVisible(true);
-    }//GEN-LAST:event_BLoginActionPerformed
-
-    private void BSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSairActionPerformed
-    this.dispose();
-    }//GEN-LAST:event_BSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,9 +278,9 @@ if(CheckBox.isSelected()){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BLogin;
-    private javax.swing.JButton BSair;
     private javax.swing.JCheckBox CheckBox;
+    private javax.swing.JButton cmdLogin;
+    private javax.swing.JButton cmdSair;
     private javax.swing.JLabel erroSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
