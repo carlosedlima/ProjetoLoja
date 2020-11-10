@@ -52,7 +52,7 @@ public void setDados(Dados clsdados){
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastros Usuarios");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -463,7 +463,7 @@ public void setDados(Dados clsdados){
                 }
             }
         }
-        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(int)cmbPerfil.getSelectedItem());
+        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(String)cmbPerfil.getSelectedItem());
 
         String msg;
 
@@ -500,7 +500,7 @@ public void setDados(Dados clsdados){
         txtSenha.setEnabled(false);
         txtCsenha.setEnabled(false);
         cmbPerfil.setEnabled(false);
-
+        
         CarregarTable();
     }//GEN-LAST:event_cmdAdicionarActionPerformed
 
@@ -576,15 +576,15 @@ public void setDados(Dados clsdados){
              RegCadastro[0]= clsdados.getUsuarios()[i].getCodusuario();
               RegCadastro[1]= clsdados.getUsuarios()[i].getNome();
                RegCadastro[2]= clsdados.getUsuarios()[i].getSnome();
-                RegCadastro[3]= Perfil ( clsdados.getUsuarios()[i].getPerfil());
+                RegCadastro[3]= Perfil(clsdados.getUsuarios()[i].getPerfil());
                 
                 Usertable.addRow(RegCadastro);    
          }
          Mtable.setModel(Usertable);
      }
     
-    private String Perfil(int idperfil){
-            if(idperfil == 1){
+    private String Perfil(String idperfil){
+            if(idperfil.equals("1")){
                 return "ADMINISTRADOR";
                 
         }else{
@@ -616,6 +616,14 @@ public void setDados(Dados clsdados){
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(frmUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

@@ -1,6 +1,9 @@
 
 package Classes;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class Dados {
    
    //Variaveis dos usuarios
@@ -19,24 +22,21 @@ public class Dados {
    private Clientes mclientes[] = new Clientes[maxClientes];
    private int countcliente = 0;
    
-   
-   
-   
-   
+  
    
     public Dados (){
         Usuarios musuario;
         
         //Criando Usuario
-        musuario = new Usuarios("carlos", "Carlos", "Lima", "123", 1);
+        musuario = new Usuarios("carlos", "Carlos", "Lima", "123", "1");
         musuarios[countusuario] = musuario;
         countusuario++;
         
-        musuario = new Usuarios("Mike", "Mike", "Sista", "123", 2);
+        musuario = new Usuarios("Mike", "Mike", "Sista", "123", "2");
         musuarios[countusuario] = musuario;
         countusuario++;
         
-        musuario = new Usuarios("Joana", "Joana", "Dark", "123", 2);
+        musuario = new Usuarios("Joana", "Joana", "Dark", "123", "2");
         musuarios[countusuario] = musuario;
         countusuario++;
     
@@ -61,18 +61,18 @@ public class Dados {
       
       //CRIANDO OS CADASTROS DE CLIENTES
       Clientes mcliente;
-      mcliente = new Clientes("1",1,"Carlos","Carlos","Andorinhas Voam",1,
-      "2512521525",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("1",1,"Carlos","Carlos","Andorinhas Voam",
+      "2512521525",1,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
-      mcliente = new Clientes("2",1,"carla","carla","peixes Nadam",1,
-      "2512529995",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("2",2,"carla","carla","peixes Nadam",
+      "2512529995",2,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
-      mcliente = new Clientes("3",1,"Jorge","Jorge","Macacos pulam",1,
-      "2512527655",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("3",3,"Jorge","Jorge","Macacos pulam",
+      "2512527655",3,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
@@ -249,6 +249,50 @@ public class Dados {
    return"CLIENTE DELETADO COM SUCESSO";
    }
    
+  /*
+    
+   TODO CÓDIGO A BAIXO FAZ REFERENCIA AS FUNÇÕES DO BD IMPROVISADO COM TXT
+   
+   */
    
    
+   
+   public void CadastroGeral(){
+       SalvarUsuarios();
+       SalvarClientes();
+       SalvarProdutos();
+   }
+   
+   public void SalvarUsuarios(){
+      FileWriter FW= null;
+      PrintWriter PW= null;
+      
+      try{
+          FW = new FileWriter("Dadosbd/usuarios.txt");
+          PW = new PrintWriter(FW);
+          
+          
+          for (int i = 0; i < countusuario; i++) {
+              PW.println(musuarios[i].ToString());
+          }
+      }catch(Exception e1){
+      e1.printStackTrace();
+      }finally{
+          try{
+              if(FW!=null){
+                 FW.close();
+              }
+          }catch(Exception e2){
+              e2.printStackTrace();
+          }
+        }
+      }
+
+   public void SalvarClientes(){
+   
+   }
+   
+   public void SalvarProdutos(){
+   
+   }
 }

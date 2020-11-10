@@ -178,7 +178,7 @@ public void setDados(Dados clsdados){
         calNascimento.setBackground(new java.awt.Color(51, 61, 71));
         calNascimento.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(calNascimento);
-        calNascimento.setBounds(250, 170, 87, 20);
+        calNascimento.setBounds(251, 170, 87, 20);
 
         cmbCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Cidade", "Sorocaba", "São Paulo", "Campinas" }));
         cmbCidade.setEnabled(false);
@@ -188,7 +188,7 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmbCidade);
-        cmbCidade.setBounds(400, 170, 106, 20);
+        cmbCidade.setBounds(400, 170, 90, 20);
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Cidade:");
@@ -260,7 +260,7 @@ public void setDados(Dados clsdados){
 
         cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
         cmdAdicionar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdAdicionar.setText("Adicionar");
+        cmdAdicionar.setText("Salvar");
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,14 +294,14 @@ public void setDados(Dados clsdados){
 
         cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
         cmdAnterior.setForeground(new java.awt.Color(255, 255, 255));
-        cmdAnterior.setText("Anterior");
+        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2.png"))); // NOI18N
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
         jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(120, 560, 70, 23);
+        cmdAnterior.setBounds(120, 560, 70, 521);
 
         cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
         cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
@@ -448,9 +448,9 @@ public void setDados(Dados clsdados){
         clienteAtual = clsdados.Nclientes()-1;
         visualizarCadastros();
     }//GEN-LAST:event_cmdUltimoActionPerformed
-
+        //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE CLIENTES
     private void cmdAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAdicionarActionPerformed
-        //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE USUARIOS
+        //VALIDANDO CAMPOS NO FORMULARIO CADASTRO DE CLIENTES
 
         //CODIGO DE CLIENTE
         if (txtCodigoCliente.getText().equals("")){
@@ -524,10 +524,15 @@ public void setDados(Dados clsdados){
         }
 
         Clientes mCliente = new Clientes(txtCodigoCliente.getText(),
-            cmbidentifica.getSelectedIndex(),txtNomeC.getText(),
-            txtSobrenomeC.getText(),txtEndereco.getText(),
-            cmbCidade.getSelectedIndex(),txtTelefone.getText(),
-            calData.getDate(),calNascimento.getDate(),txtEmail.getText());//OBJETO mCliente quebrado em linhas
+            cmbidentifica.getSelectedIndex(),
+            txtNomeC.getText(),
+            txtSobrenomeC.getText(),
+            txtEndereco.getText(),
+            txtTelefone.getText(),
+            cmbCidade.getSelectedIndex(),
+            calData.getDate(),
+            calNascimento.getDate(),
+            txtEmail.getText());//OBJETO mCliente quebrado em linhas
         String msg;
 
         if(cmdnovo){
@@ -569,7 +574,7 @@ public void setDados(Dados clsdados){
         calData.setEnabled(false);
 
     }//GEN-LAST:event_cmdAdicionarActionPerformed
-
+        // BOTÃO PROXIMO ITEM
     private void cmdProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProximoActionPerformed
         // BOTÃO PROXIMO ITEM
         clienteAtual ++;
@@ -578,9 +583,9 @@ public void setDados(Dados clsdados){
         }
         visualizarCadastros();
     }//GEN-LAST:event_cmdProximoActionPerformed
-
+        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO
     private void cmdNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdNovoActionPerformed
-        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO USUARIOS
+        // ESTE É O CÓDIGO DO BOTÃO NOVO DO FORMULARÍO CADASTRO
 
         //Botões exibição
         cmdPrimeiro.setEnabled(false);
@@ -624,7 +629,7 @@ public void setDados(Dados clsdados){
         txtCodigoCliente.requestFocusInWindow();
         CarregarTable();
     }//GEN-LAST:event_cmdNovoActionPerformed
-
+        // CODIGO DO BOTÂO ANTERIOR
     private void cmdAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAnteriorActionPerformed
         // CODIGO DO BOTÂO ANTERIOR
 
@@ -636,7 +641,7 @@ public void setDados(Dados clsdados){
         visualizarCadastros();
 
     }//GEN-LAST:event_cmdAnteriorActionPerformed
-
+        // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CLIENTES
     private void cmdEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditarActionPerformed
 
         // ESTE É O CÓDIGO DO BOTÃO EDITAR DO FORMULARÍO CLIENTES
@@ -667,13 +672,13 @@ public void setDados(Dados clsdados){
         cmbidentifica.requestFocusInWindow();
         CarregarTable();
     }//GEN-LAST:event_cmdEditarActionPerformed
-
+        // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO
     private void cmdPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPrimeiroActionPerformed
         // ESTE È O BOTÂO PRIMEIRO DO FORMULARIO USUARIOS
         clienteAtual=0;
         visualizarCadastros();
     }//GEN-LAST:event_cmdPrimeiroActionPerformed
-
+        // ESTE CÓDIGO É DO BOTÃO PESQUISAR
     private void cmdPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdPesquisarActionPerformed
         // ESTE CÓDIGO É DO BOTÃO PESQUISAR
         String cliente = JOptionPane.showInputDialog("FAVOR DIGIAR O CODIGO DO CLIENTE");
@@ -688,11 +693,11 @@ public void setDados(Dados clsdados){
         clienteAtual=posL;
         visualizarCadastros();
     }//GEN-LAST:event_cmdPesquisarActionPerformed
-
+        //inutil
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
-
+        //Evento que carrega os dados na tabela ao abrir
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         visualizarCadastros();
         CarregarTable();
