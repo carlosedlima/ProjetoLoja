@@ -27,7 +27,6 @@ private DefaultTableModel Usertable;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         txtCodigoProduto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -52,209 +51,129 @@ private DefaultTableModel Usertable;
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 620));
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(32, 34, 37));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(602, 1194));
-        jPanel1.setPreferredSize(new java.awt.Dimension(602, 1194));
-        jPanel1.setLayout(null);
-
-        txtCodigoProduto.setBackground(new java.awt.Color(51, 61, 71));
-        txtCodigoProduto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCodigoProduto.setEnabled(false);
         txtCodigoProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoProdutoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCodigoProduto);
-        txtCodigoProduto.setBounds(20, 40, 130, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descrição");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 70, 60, 14);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ID");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 20, 40, 14);
+        jLabel1.setText("Cod Produto");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Preço");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(220, 20, 40, 14);
 
-        txtPreco.setBackground(new java.awt.Color(51, 61, 71));
-        txtPreco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtPreco.setEnabled(false);
         txtPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPrecoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPreco);
-        txtPreco.setBounds(220, 40, 130, 20);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Taxa");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(420, 20, 50, 14);
 
         cmbTaxa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Taxa", "0%", "10%", "15%", "20%" }));
-        cmbTaxa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         cmbTaxa.setEnabled(false);
         cmbTaxa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTaxaActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbTaxa);
-        cmbTaxa.setBounds(420, 40, 129, 20);
 
-        txtDescricao.setBackground(new java.awt.Color(51, 61, 71));
-        txtDescricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtDescricao.setEnabled(false);
         txtDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescricaoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDescricao);
-        txtDescricao.setBounds(20, 90, 530, 20);
 
-        txtObs.setBackground(new java.awt.Color(51, 61, 71));
         txtObs.setColumns(20);
         txtObs.setRows(5);
-        txtObs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtObs.setEnabled(false);
         jScrollPane2.setViewportView(txtObs);
 
-        jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 140, 530, 90);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Obs :");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 120, 40, 14);
 
-        cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupe.png"))); // NOI18N
+        cmdPesquisar.setText("Procurar");
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(570, 570, 30, 29);
 
-        cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1-invertido.png"))); // NOI18N
+        cmdPrimeiro.setText("Primeiro");
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdPrimeiro);
-        cmdPrimeiro.setBounds(20, 570, 30, 29);
 
-        cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-invertido.png"))); // NOI18N
+        cmdAnterior.setText("Anterior");
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(70, 570, 30, 29);
 
-        cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/092-edit copy.png"))); // NOI18N
+        cmdEditar.setText("Editar");
         cmdEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdEditar);
-        cmdEditar.setBounds(560, 60, 40, 40);
 
-        cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Formularios/074-layers copy.png"))); // NOI18N
+        cmdNovo.setText("Novo");
         cmdNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdNovoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdNovo);
-        cmdNovo.setBounds(560, 20, 40, 40);
 
-        cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2.png"))); // NOI18N
+        cmdProximo.setText("Proximo");
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdProximo);
-        cmdProximo.setBounds(100, 570, 30, 29);
 
-        cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setText("Deletar");
         cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeletarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdDeletar);
-        cmdDeletar.setBounds(560, 100, 40, 40);
 
-        cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/127-ban copy.png"))); // NOI18N
+        cmdCancelar.setText("Cancelar");
         cmdCancelar.setEnabled(false);
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCancelar);
-        cmdCancelar.setBounds(560, 190, 40, 40);
 
-        cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setText("Adicionar");
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAdicionarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdAdicionar);
-        cmdAdicionar.setBounds(560, 150, 40, 40);
 
-        cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1.png"))); // NOI18N
+        cmdUltimo.setText("Ultimo");
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdUltimo);
-        cmdUltimo.setBounds(150, 570, 30, 29);
 
-        Mtable.setBackground(new java.awt.Color(51, 61, 71));
         Mtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -269,18 +188,97 @@ private DefaultTableModel Usertable;
         Mtable.setEnabled(false);
         jScrollPane1.setViewportView(Mtable);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 249, 580, 310);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtCodigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbTaxa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmdPesquisar)
+                            .addComponent(cmdPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(cmdEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmdNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmdAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmdProximo)
+                                .addGap(14, 14, 14)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cmdUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmdAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmdDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cmdCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                        .addComponent(txtDescricao, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtCodigoProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(cmbTaxa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(50, 50, 50))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmdPesquisar)
+                    .addComponent(cmdEditar)
+                    .addComponent(cmdNovo)
+                    .addComponent(cmdAdicionar)
+                    .addComponent(cmdCancelar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmdPrimeiro)
+                    .addComponent(cmdAnterior)
+                    .addComponent(cmdProximo)
+                    .addComponent(cmdUltimo)
+                    .addComponent(cmdDeletar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -655,7 +653,6 @@ private DefaultTableModel Usertable;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtCodigoProduto;

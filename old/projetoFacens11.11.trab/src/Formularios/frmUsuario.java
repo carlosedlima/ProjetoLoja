@@ -27,7 +27,6 @@ public void setDados(Dados clsdados){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         cmdPrimeiro = new javax.swing.JButton();
         cmdPesquisar = new javax.swing.JButton();
         cmdEditar = new javax.swing.JButton();
@@ -53,133 +52,86 @@ public void setDados(Dados clsdados){
         jScrollPane1 = new javax.swing.JScrollPane();
         Mtable = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastros Usuarios");
-        setPreferredSize(new java.awt.Dimension(600, 620));
-        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(32, 34, 37));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setMinimumSize(new java.awt.Dimension(602, 1194));
-        jPanel1.setPreferredSize(new java.awt.Dimension(602, 1194));
-        jPanel1.setLayout(null);
-
-        cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
         cmdPrimeiro.setText("Primeiro");
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdPrimeiro);
-        cmdPrimeiro.setBounds(20, 500, 83, 23);
 
-        cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
         cmdPesquisar.setText("Procurar");
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(470, 500, 73, 23);
 
-        cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/092-edit copy.png"))); // NOI18N
+        cmdEditar.setText("Editar");
         cmdEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdEditar);
-        cmdEditar.setBounds(510, 60, 40, 39);
 
-        cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
         cmdAnterior.setText("Anterior");
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(120, 500, 80, 23);
 
-        cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
         cmdProximo.setText("Proximo");
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdProximo);
-        cmdProximo.setBounds(200, 500, 71, 23);
 
-        cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
         cmdUltimo.setText("Ultimo");
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdUltimo);
-        cmdUltimo.setBounds(280, 500, 74, 23);
 
-        cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdDeletar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setText("Deletar");
         cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeletarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdDeletar);
-        cmdDeletar.setBounds(510, 100, 40, 40);
 
-        cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/127-ban copy.png"))); // NOI18N
+        cmdCancelar.setText("Cancelar");
         cmdCancelar.setEnabled(false);
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCancelar);
-        cmdCancelar.setBounds(510, 160, 40, 40);
 
-        cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAdicionar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setText("Adicionar");
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAdicionarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdAdicionar);
-        cmdAdicionar.setBounds(470, 160, 40, 40);
 
-        cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdNovo.setForeground(new java.awt.Color(255, 255, 255));
-        cmdNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Formularios/074-layers copy.png"))); // NOI18N
+        cmdNovo.setText("Novo");
         cmdNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdNovoActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdNovo);
-        cmdNovo.setBounds(510, 20, 40, 39);
 
         txtCsenha.setEnabled(false);
-        jPanel1.add(txtCsenha);
-        txtCsenha.setBounds(20, 190, 220, 20);
 
         txtSenha.setEnabled(false);
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -187,12 +139,8 @@ public void setDados(Dados clsdados){
                 txtSenhaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtSenha);
-        txtSenha.setBounds(20, 150, 220, 20);
 
         txtSnome.setEnabled(false);
-        jPanel1.add(txtSnome);
-        txtSnome.setBounds(20, 100, 400, 20);
 
         txtNome.setEnabled(false);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -200,17 +148,8 @@ public void setDados(Dados clsdados){
                 txtNomeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNome);
-        txtNome.setBounds(20, 60, 400, 20);
 
         txtCodigoUsuario.setEnabled(false);
-        txtCodigoUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoUsuarioActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtCodigoUsuario);
-        txtCodigoUsuario.setBounds(40, 20, 170, 20);
 
         cmbPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Perfil", "Administrador", "Funcionario" }));
         cmbPerfil.setEnabled(false);
@@ -219,44 +158,18 @@ public void setDados(Dados clsdados){
                 cmbPerfilActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbPerfil);
-        cmbPerfil.setBounds(260, 20, 160, 20);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Perfil:");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(220, 20, 32, 20);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("ID");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 20, 20, 20);
+        jLabel1.setText("Cod Usuario");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 40, 40, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("2º nome");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 80, 50, 20);
+        jLabel3.setText("S Nome");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Senha");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 130, 35, 14);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Conf Senha");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 170, 63, 14);
 
         Mtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -272,18 +185,103 @@ public void setDados(Dados clsdados){
         Mtable.setEnabled(false);
         jScrollPane1.setViewportView(Mtable);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 220, 530, 270);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cmbPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)))
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtSnome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cmdPesquisar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdAdicionar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cmdPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdProximo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cmdUltimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cmdDeletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cmdCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtCodigoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(cmbPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtSnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtCsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmdPesquisar)
+                    .addComponent(cmdEditar)
+                    .addComponent(cmdNovo)
+                    .addComponent(cmdCancelar)
+                    .addComponent(cmdAdicionar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmdAnterior)
+                    .addComponent(cmdPrimeiro)
+                    .addComponent(cmdProximo)
+                    .addComponent(cmdUltimo)
+                    .addComponent(cmdDeletar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -559,10 +557,6 @@ public void setDados(Dados clsdados){
         visualizarCadastros();
         CarregarTable();
     }//GEN-LAST:event_formWindowOpened
-
-    private void txtCodigoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoUsuarioActionPerformed
   
     
     private void visualizarCadastros(){
@@ -667,7 +661,6 @@ public void setDados(Dados clsdados){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtCodigoUsuario;
     private javax.swing.JPasswordField txtCsenha;

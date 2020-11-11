@@ -453,7 +453,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\apoio.portal\Desktop\icons - Copia\20x20 Feitos\042-next-1.png"/>
+              <Image iconType="3" name="/Imagens/042-next-1.png"/>
             </Property>
           </Properties>
           <Events>

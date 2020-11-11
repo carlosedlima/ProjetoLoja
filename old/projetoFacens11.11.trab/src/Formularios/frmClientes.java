@@ -249,7 +249,7 @@ public void setDados(Dados clsdados){
 
         cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
         cmdUltimo.setForeground(new java.awt.Color(255, 255, 255));
-        cmdUltimo.setIcon(new javax.swing.ImageIcon("C:\\Users\\apoio.portal\\Desktop\\icons - Copia\\20x20 Feitos\\042-next-1.png")); // NOI18N
+        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1.png"))); // NOI18N
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
