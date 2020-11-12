@@ -53,7 +53,6 @@ private DefaultTableModel Usertable;
         Mtable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 620));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -112,7 +111,7 @@ private DefaultTableModel Usertable;
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Taxa");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(420, 20, 50, 14);
+        jLabel6.setBounds(400, 20, 50, 14);
 
         cmbTaxa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Taxa", "0%", "10%", "15%", "20%" }));
         cmbTaxa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -123,7 +122,7 @@ private DefaultTableModel Usertable;
             }
         });
         jPanel1.add(cmbTaxa);
-        cmbTaxa.setBounds(420, 40, 129, 20);
+        cmbTaxa.setBounds(400, 40, 129, 20);
 
         txtDescricao.setBackground(new java.awt.Color(51, 61, 71));
         txtDescricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -134,7 +133,7 @@ private DefaultTableModel Usertable;
             }
         });
         jPanel1.add(txtDescricao);
-        txtDescricao.setBounds(20, 90, 530, 20);
+        txtDescricao.setBounds(20, 90, 510, 20);
 
         txtObs.setBackground(new java.awt.Color(51, 61, 71));
         txtObs.setColumns(20);
@@ -144,7 +143,7 @@ private DefaultTableModel Usertable;
         jScrollPane2.setViewportView(txtObs);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 140, 530, 90);
+        jScrollPane2.setBounds(20, 140, 510, 90);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,17 +152,17 @@ private DefaultTableModel Usertable;
         jLabel4.setBounds(20, 120, 40, 14);
 
         cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupe.png"))); // NOI18N
+        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupw.png"))); // NOI18N
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(570, 570, 30, 29);
+        cmdPesquisar.setBounds(550, 570, 30, 29);
 
         cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1-invertido.png"))); // NOI18N
+        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-w.png"))); // NOI18N
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
@@ -173,7 +172,7 @@ private DefaultTableModel Usertable;
         cmdPrimeiro.setBounds(20, 570, 30, 29);
 
         cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-invertido.png"))); // NOI18N
+        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-w.png"))); // NOI18N
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
@@ -183,14 +182,14 @@ private DefaultTableModel Usertable;
         cmdAnterior.setBounds(70, 570, 30, 29);
 
         cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/092-edit copy.png"))); // NOI18N
+        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w092-edit copy.png"))); // NOI18N
         cmdEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdEditar);
-        cmdEditar.setBounds(560, 60, 40, 40);
+        cmdEditar.setBounds(540, 60, 40, 40);
 
         cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
         cmdNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Formularios/074-layers copy.png"))); // NOI18N
@@ -200,10 +199,10 @@ private DefaultTableModel Usertable;
             }
         });
         jPanel1.add(cmdNovo);
-        cmdNovo.setBounds(560, 20, 40, 40);
+        cmdNovo.setBounds(540, 20, 40, 40);
 
         cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2.png"))); // NOI18N
+        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-nextw.png"))); // NOI18N
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
@@ -213,17 +212,17 @@ private DefaultTableModel Usertable;
         cmdProximo.setBounds(100, 570, 30, 29);
 
         cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w098-delete-2 copy.png"))); // NOI18N
         cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeletarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdDeletar);
-        cmdDeletar.setBounds(560, 100, 40, 40);
+        cmdDeletar.setBounds(540, 100, 40, 40);
 
         cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/127-ban copy.png"))); // NOI18N
+        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w127-ban copy.png"))); // NOI18N
         cmdCancelar.setEnabled(false);
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,10 +230,10 @@ private DefaultTableModel Usertable;
             }
         });
         jPanel1.add(cmdCancelar);
-        cmdCancelar.setBounds(560, 190, 40, 40);
+        cmdCancelar.setBounds(540, 190, 40, 40);
 
         cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w027-diskette copy.png"))); // NOI18N
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,10 +241,10 @@ private DefaultTableModel Usertable;
             }
         });
         jPanel1.add(cmdAdicionar);
-        cmdAdicionar.setBounds(560, 150, 40, 40);
+        cmdAdicionar.setBounds(540, 150, 40, 40);
 
         cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1.png"))); // NOI18N
+        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-nextw.png"))); // NOI18N
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
@@ -270,13 +269,13 @@ private DefaultTableModel Usertable;
         jScrollPane1.setViewportView(Mtable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 249, 580, 310);
+        jScrollPane1.setBounds(20, 249, 560, 310);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

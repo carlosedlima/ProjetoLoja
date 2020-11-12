@@ -374,7 +374,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="260" width="560" height="295"/>
+              <AbsoluteConstraints x="20" y="260" width="560" height="300"/>
             </Constraint>
           </Constraints>
 
@@ -410,7 +410,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/098-delete-2 copy.png"/>
+              <Image iconType="3" name="/Imagens/w098-delete-2 copy.png"/>
             </Property>
           </Properties>
           <Events>
@@ -431,7 +431,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/127-ban copy.png"/>
+              <Image iconType="3" name="/Imagens/w127-ban copy.png"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -453,7 +453,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\apoio.portal\Desktop\icons - Copia\20x20 Feitos\042-next-1.png"/>
+              <Image iconType="3" name="/Imagens/042-nextw.png"/>
             </Property>
           </Properties>
           <Events>
@@ -461,7 +461,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="140" y="560" width="30" height="30"/>
+              <AbsoluteConstraints x="130" y="570" width="30" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -474,7 +474,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/027-diskette copy.png"/>
+              <Image iconType="3" name="/Imagens/w027-diskette copy.png"/>
             </Property>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
@@ -496,7 +496,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/030-next-2.png"/>
+              <Image iconType="3" name="/Imagens/030-nextw.png"/>
             </Property>
           </Properties>
           <Events>
@@ -504,7 +504,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="560" width="30" height="-1"/>
+              <AbsoluteConstraints x="90" y="570" width="30" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -517,7 +517,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Formularios/074-layers copy.png"/>
+              <Image iconType="3" name="/Imagens/w074-layers copy.png"/>
             </Property>
           </Properties>
           <Events>
@@ -538,7 +538,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/030-next-2-invertido.png"/>
+              <Image iconType="3" name="/Imagens/030-next-2-w.png"/>
             </Property>
           </Properties>
           <Events>
@@ -546,7 +546,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="70" y="560" width="30" height="-1"/>
+              <AbsoluteConstraints x="60" y="570" width="30" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -559,7 +559,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/092-edit copy.png"/>
+              <Image iconType="3" name="/Imagens/w092-edit copy.png"/>
             </Property>
           </Properties>
           <Events>
@@ -580,7 +580,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/042-next-1-invertido.png"/>
+              <Image iconType="3" name="/Imagens/042-w.png"/>
             </Property>
           </Properties>
           <Events>
@@ -588,7 +588,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="30" y="560" width="30" height="30"/>
+              <AbsoluteConstraints x="20" y="570" width="30" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -601,7 +601,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagens/024-loupe.png"/>
+              <Image iconType="3" name="/Imagens/024-loupw.png"/>
             </Property>
           </Properties>
           <Events>
@@ -609,7 +609,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="550" y="560" width="30" height="-1"/>
+              <AbsoluteConstraints x="550" y="570" width="30" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

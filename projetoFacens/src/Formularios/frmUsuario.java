@@ -55,7 +55,6 @@ public void setDados(Dados clsdados){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastros Usuarios");
-        setPreferredSize(new java.awt.Dimension(600, 620));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -71,80 +70,80 @@ public void setDados(Dados clsdados){
         jPanel1.setLayout(null);
 
         cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPrimeiro.setText("Primeiro");
+        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-w.png"))); // NOI18N
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPrimeiro);
-        cmdPrimeiro.setBounds(20, 500, 83, 23);
+        cmdPrimeiro.setBounds(20, 570, 30, 29);
 
         cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPesquisar.setText("Procurar");
+        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupw.png"))); // NOI18N
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(470, 500, 73, 23);
+        cmdPesquisar.setBounds(550, 570, 30, 29);
 
         cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
         cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/092-edit copy.png"))); // NOI18N
+        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w092-edit copy.png"))); // NOI18N
         cmdEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdEditar);
-        cmdEditar.setBounds(510, 60, 40, 39);
+        cmdEditar.setBounds(540, 60, 40, 39);
 
         cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAnterior.setText("Anterior");
+        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-w.png"))); // NOI18N
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
         jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(120, 500, 80, 23);
+        cmdAnterior.setBounds(70, 570, 30, 29);
 
         cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdProximo.setText("Proximo");
+        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-nextw.png"))); // NOI18N
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdProximo);
-        cmdProximo.setBounds(200, 500, 71, 23);
+        cmdProximo.setBounds(100, 570, 30, 29);
 
         cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdUltimo.setText("Ultimo");
+        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-nextw.png"))); // NOI18N
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdUltimo);
-        cmdUltimo.setBounds(280, 500, 74, 23);
+        cmdUltimo.setBounds(150, 570, 30, 29);
 
         cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
         cmdDeletar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w098-delete-2 copy.png"))); // NOI18N
         cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeletarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdDeletar);
-        cmdDeletar.setBounds(510, 100, 40, 40);
+        cmdDeletar.setBounds(540, 100, 40, 40);
 
         cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
         cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/127-ban copy.png"))); // NOI18N
+        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w127-ban copy.png"))); // NOI18N
         cmdCancelar.setEnabled(false);
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,11 +151,11 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmdCancelar);
-        cmdCancelar.setBounds(510, 160, 40, 40);
+        cmdCancelar.setBounds(540, 220, 40, 40);
 
         cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
         cmdAdicionar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w027-diskette copy.png"))); // NOI18N
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +163,7 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmdAdicionar);
-        cmdAdicionar.setBounds(470, 160, 40, 40);
+        cmdAdicionar.setBounds(540, 180, 40, 40);
 
         cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
         cmdNovo.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,11 +174,11 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmdNovo);
-        cmdNovo.setBounds(510, 20, 40, 39);
+        cmdNovo.setBounds(540, 20, 40, 39);
 
         txtCsenha.setEnabled(false);
         jPanel1.add(txtCsenha);
-        txtCsenha.setBounds(20, 190, 220, 20);
+        txtCsenha.setBounds(20, 230, 290, 20);
 
         txtSenha.setEnabled(false);
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -188,11 +187,11 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(txtSenha);
-        txtSenha.setBounds(20, 150, 220, 20);
+        txtSenha.setBounds(20, 180, 290, 20);
 
         txtSnome.setEnabled(false);
         jPanel1.add(txtSnome);
-        txtSnome.setBounds(20, 100, 400, 20);
+        txtSnome.setBounds(20, 120, 470, 20);
 
         txtNome.setEnabled(false);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
@@ -201,7 +200,7 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(txtNome);
-        txtNome.setBounds(20, 60, 400, 20);
+        txtNome.setBounds(20, 70, 470, 20);
 
         txtCodigoUsuario.setEnabled(false);
         txtCodigoUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -220,13 +219,13 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmbPerfil);
-        cmbPerfil.setBounds(260, 20, 160, 20);
+        cmbPerfil.setBounds(300, 20, 190, 20);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Perfil:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(220, 20, 32, 20);
+        jLabel6.setBounds(260, 20, 40, 20);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -238,25 +237,25 @@ public void setDados(Dados clsdados){
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 40, 40, 20);
+        jLabel2.setBounds(20, 50, 40, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("2º nome");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 80, 50, 20);
+        jLabel3.setBounds(20, 100, 50, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Senha");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(20, 130, 35, 14);
+        jLabel4.setBounds(20, 160, 35, 14);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Conf Senha");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 170, 63, 14);
+        jLabel5.setBounds(20, 210, 63, 14);
 
         Mtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -273,17 +272,19 @@ public void setDados(Dados clsdados){
         jScrollPane1.setViewportView(Mtable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 220, 530, 270);
+        jScrollPane1.setBounds(20, 270, 560, 290);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
