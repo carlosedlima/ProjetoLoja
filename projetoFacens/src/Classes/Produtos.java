@@ -56,7 +56,18 @@ public class Produtos {
         this.obs = obs;
     }
     
+    //TODO CODIGO A SEGUIR E PARA O BD TXT
     
+    
+       public String ToString(){
+        return codProduto + "-"
+                + descricao +"-"
+                + preco +"-"
+                + taxa +"-"
+                + obs;
+                
+    }
+   
     
     
 }

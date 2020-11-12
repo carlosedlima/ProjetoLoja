@@ -16,8 +16,10 @@ public class Clientes {
     private Date DataVenda;
     private String Email;
 
-    public Clientes(String CodigoCliente, int Indent, String Nome, String Sobrenome, String Endereco, int Cidade,
-            String Telefone, Date DataNasc, Date DataVenda, String Email) {
+    
+    // CONSTRUTOR DO CLIENTE
+    
+    public Clientes(String CodigoCliente,int Indent, String Nome,String Sobrenome,String Endereco, String Telefone, int Cidade,Date DataNasc, Date DataVenda, String Email) {
         this.CodigoCliente = CodigoCliente;
         this.Indent = Indent;
         this.Nome = Nome;
@@ -30,21 +32,13 @@ public class Clientes {
         this.Email = Email;
     }
 
+    /*
     
+        TODOS OS CODIGOS ABAIXO SÃO
+        GETS E SETTERS DA CLASSE CLIENTE
+        
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    */
     
     
     public String getCodigoCliente() {
@@ -128,10 +122,24 @@ public class Clientes {
     }
 
     
+    /*
+    
+        TODO CÓDIGO A SEGUIR É TEMPORARIO PARA O FUNCINAMENTO DE UM BD EM TXT
+    
+    */
     
     
-    
-    
+    public String ToString(){
+        return CodigoCliente + "-"
+         + Indent + "-"
+         + Nome + "-"
+         + Sobrenome + "-"
+         + Endereco + "-"
+         + Cidade + "-"
+         + DataNasc + "-"
+         + DataVenda + "-"
+         + Email;       
+    }
     
     
     

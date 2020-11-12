@@ -6,7 +6,9 @@ public class Usuarios {
     private String Snome;
     private String Senha;
     private String perfil;
-
+    
+    //CONSTRUTOR DOS Usuarios
+    
     public Usuarios(String Codusuario, String nome, String Snome, String Senha, String perfil) {
         this.Codusuario = Codusuario;
         this.nome = nome;
@@ -15,6 +17,12 @@ public class Usuarios {
         this.perfil = perfil;
     }
 
+    
+    // ABAIXO TODOS OS GET SETTERS DE USUARIOS
+    
+    
+    
+    
     public String getCodusuario() {
         return Codusuario;
     }
@@ -46,7 +54,7 @@ public class Usuarios {
     public void setSenha(String Senha) {
         this.Senha = Senha;
     }
-
+    
     public String getPerfil() {
         return perfil;
     }
@@ -57,4 +65,19 @@ public class Usuarios {
     
     
     
+    
+    // TODO CÒDIGO A SEGUIR E TEMPORARIO PRO BANCO DE DADOS TXT
+    
+    
+   public String ToString(){
+        return Codusuario + "-"
+                
+                + nome + "-"
+                + Snome + "-"
+                + Senha + "-"
+                + perfil;
+    }
+   
+
+
 }

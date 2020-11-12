@@ -1,6 +1,9 @@
 
 package Classes;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class Dados {
    
    //Variaveis dos usuarios
@@ -20,9 +23,8 @@ public class Dados {
    private int countcliente = 0;
    
    
-   
-   
-   
+   //Aqui são os dados ja inicias do programa
+  
    
     public Dados (){
         Usuarios musuario;
@@ -61,18 +63,18 @@ public class Dados {
       
       //CRIANDO OS CADASTROS DE CLIENTES
       Clientes mcliente;
-      mcliente = new Clientes("1",1,"Carlos","Carlos","Andorinhas Voam",1,
-      "2512521525",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("1",1,"Carlos","Carlos","Andorinhas Voam",
+      "2512521525",1,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
-      mcliente = new Clientes("2",1,"carla","carla","peixes Nadam",1,
-      "2512529995",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("2",2,"carla","carla","peixes Nadam",
+      "2512529995",2,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
-      mcliente = new Clientes("3",1,"Jorge","Jorge","Macacos pulam",1,
-      "2512527655",Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
+      mcliente = new Clientes("3",3,"Jorge","Jorge","Macacos pulam",
+      "2512527655",3,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
       mclientes[countcliente] = mcliente;
       countcliente++;
       
@@ -156,7 +158,7 @@ public class Dados {
    
    //TODOS OS METODOS A BAIXO FAZEM REFERENCIA AS FUNÇÕES DE CADA BOTÃO.
    //ADICIONAR
-    //Adcionar Usuario
+   //Adcionar Usuario
    public String CadastroUsuario(Usuarios MMusuario){
        if (countusuario == maxUsuarios){
            return "NÃO A MAIS ESPAÇO";
@@ -249,6 +251,92 @@ public class Dados {
    return"CLIENTE DELETADO COM SUCESSO";
    }
    
+  /*
+    
+   TODO CÓDIGO A BAIXO FAZ REFERENCIA AS FUNÇÕES DO BD IMPROVISADO COM TXT
+   
+   */
    
    
+   
+   public void CadastroGeral(){
+       SalvarUsuarios();
+       SalvarClientes();
+       SalvarProdutos();
+   }
+   
+   public void SalvarUsuarios(){
+      FileWriter FW= null;
+      PrintWriter PW= null;
+      
+      try{
+          FW = new FileWriter("Dadosbd/usuarios.txt");
+          PW = new PrintWriter(FW);
+          
+          
+          for (int i = 0; i < countusuario; i++) {
+              PW.println(musuarios[i].ToString());
+          }
+      }catch(Exception e1){
+      e1.printStackTrace();
+      }finally{
+          try{
+              if(FW!=null){
+                 FW.close();
+              }
+          }catch(Exception e2){
+              e2.printStackTrace();
+          }
+        }
+      }
+
+   public void SalvarClientes(){
+      FileWriter FW= null;
+      PrintWriter PW= null;
+      
+      try{
+          FW = new FileWriter("Dadosbd/clientes.txt");
+          PW = new PrintWriter(FW);
+          
+          
+          for (int i = 0; i < countcliente; i++) {
+              PW.println(mclientes[i].ToString());
+          }
+      }catch(Exception e1){
+      e1.printStackTrace();
+      }finally{
+          try{
+              if(FW!=null){
+                 FW.close();
+              }
+          }catch(Exception e2){
+              e2.printStackTrace();
+          }
+        }
+   }
+   
+   public void SalvarProdutos(){
+         FileWriter FW= null;
+      PrintWriter PW= null;
+      
+      try{
+          FW = new FileWriter("Dadosbd/produtos.txt");
+          PW = new PrintWriter(FW);
+          
+          
+          for (int i = 0; i < countproduto; i++) {
+              PW.println(mprodutos[i].ToString());
+          }
+      }catch(Exception e1){
+      e1.printStackTrace();
+      }finally{
+          try{
+              if(FW!=null){
+                 FW.close();
+              }
+          }catch(Exception e2){
+              e2.printStackTrace();
+          }
+        }
+   }
 }

@@ -31,76 +31,41 @@ public void setDados(Dados clsdados){
 
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        label1 = new java.awt.Label();
-        label2 = new java.awt.Label();
-        cmdLogin = new javax.swing.JButton();
-        cmdSair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        label1 = new java.awt.Label();
         jPanel1 = new javax.swing.JPanel();
         txtUsuario = new javax.swing.JTextField();
+        label2 = new java.awt.Label();
         jPanel2 = new javax.swing.JPanel();
         txtViewSenha = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        CheckBox = new javax.swing.JCheckBox();
         erroSenha = new javax.swing.JLabel();
+        CheckBox = new javax.swing.JCheckBox();
+        BLogin = new javax.swing.JButton();
+        BSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lgin");
         setUndecorated(true);
         setResizable(false);
 
-        jPanel3.setBackground(new java.awt.Color(51, 61, 71));
+        jPanel3.setBackground(new java.awt.Color(32, 34, 37));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 176));
         jPanel3.setRequestFocusEnabled(false);
         jPanel3.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(32, 34, 37));
-        jPanel4.setLayout(null);
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Login");
+        jPanel3.add(jLabel1);
+        jLabel1.setBounds(10, 10, 60, 30);
 
         label1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         label1.setForeground(new java.awt.Color(255, 255, 255));
         label1.setText("Usuario:");
-        jPanel4.add(label1);
-        label1.setBounds(10, 40, 50, 19);
-
-        label2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        label2.setForeground(new java.awt.Color(255, 255, 255));
-        label2.setText("Senha:");
-        jPanel4.add(label2);
-        label2.setBounds(10, 70, 43, 19);
-
-        cmdLogin.setBackground(new java.awt.Color(51, 61, 71));
-        cmdLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cmdLogin.setForeground(new java.awt.Color(255, 255, 255));
-        cmdLogin.setText("Login");
-        cmdLogin.setBorder(null);
-        cmdLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdLoginActionPerformed(evt);
-            }
-        });
-        jPanel4.add(cmdLogin);
-        cmdLogin.setBounds(150, 110, 88, 30);
-
-        cmdSair.setBackground(new java.awt.Color(51, 61, 71));
-        cmdSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        cmdSair.setForeground(new java.awt.Color(255, 255, 255));
-        cmdSair.setText("Sair");
-        cmdSair.setBorder(null);
-        cmdSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdSairActionPerformed(evt);
-            }
-        });
-        jPanel4.add(cmdSair);
-        cmdSair.setBounds(60, 110, 84, 30);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Login");
-        jPanel4.add(jLabel1);
-        jLabel1.setBounds(10, 0, 250, 30);
+        jPanel3.add(label1);
+        label1.setBounds(30, 60, 50, 19);
 
         jPanel1.setBackground(new java.awt.Color(51, 61, 71));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -118,8 +83,14 @@ public void setDados(Dados clsdados){
         jPanel1.add(txtUsuario);
         txtUsuario.setBounds(10, 0, 300, 30);
 
-        jPanel4.add(jPanel1);
-        jPanel1.setBounds(60, 40, 320, 30);
+        jPanel3.add(jPanel1);
+        jPanel1.setBounds(80, 60, 320, 30);
+
+        label2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        label2.setForeground(new java.awt.Color(255, 255, 255));
+        label2.setText("Senha:");
+        jPanel3.add(label2);
+        label2.setBounds(30, 90, 43, 19);
 
         jPanel2.setBackground(new java.awt.Color(51, 61, 71));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -150,8 +121,14 @@ public void setDados(Dados clsdados){
         jPanel2.add(txtSenha);
         txtSenha.setBounds(10, 0, 300, 30);
 
-        jPanel4.add(jPanel2);
-        jPanel2.setBounds(60, 70, 320, 30);
+        jPanel3.add(jPanel2);
+        jPanel2.setBounds(80, 90, 320, 30);
+
+        erroSenha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        erroSenha.setForeground(new java.awt.Color(153, 0, 0));
+        erroSenha.setText("*senha ou/e usuario incorretos");
+        jPanel3.add(erroSenha);
+        erroSenha.setBounds(80, 120, 280, 20);
 
         CheckBox.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         CheckBox.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,28 +140,42 @@ public void setDados(Dados clsdados){
                 CheckBoxActionPerformed(evt);
             }
         });
-        jPanel4.add(CheckBox);
-        CheckBox.setBounds(240, 110, 90, 23);
+        jPanel3.add(CheckBox);
+        CheckBox.setBounds(260, 140, 90, 23);
 
-        erroSenha.setForeground(new java.awt.Color(153, 0, 0));
-        erroSenha.setText("*senha ou/e usuario incorretos");
-        jPanel4.add(erroSenha);
-        erroSenha.setBounds(60, 100, 280, 10);
+        BLogin.setBackground(new java.awt.Color(51, 61, 71));
+        BLogin.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BLogin.setForeground(new java.awt.Color(255, 255, 255));
+        BLogin.setText("Login");
+        BLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BLoginActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BLogin);
+        BLogin.setBounds(170, 140, 80, 30);
 
-        jPanel3.add(jPanel4);
-        jPanel4.setBounds(10, 10, 400, 150);
+        BSair.setBackground(new java.awt.Color(51, 61, 71));
+        BSair.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BSair.setForeground(new java.awt.Color(255, 255, 255));
+        BSair.setText("Sair");
+        BSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BSairActionPerformed(evt);
+            }
+        });
+        jPanel3.add(BSair);
+        BSair.setBounds(80, 140, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         getAccessibleContext().setAccessibleName("Login");
@@ -196,29 +187,6 @@ public void setDados(Dados clsdados){
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioActionPerformed
-
-    private void cmdSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdSairActionPerformed
-        //Botão para saida do Login
-        this.dispose();
-    }//GEN-LAST:event_cmdSairActionPerformed
-
-    private void cmdLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLoginActionPerformed
-       // Botão login
-       
-       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){
-           erroSenha.setVisible(true);
-           txtUsuario.setText("");
-           txtSenha.setText("");
-           txtUsuario.requestFocusInWindow();
-           return;
-       }
-       
-       frmMenu frmmenu = new frmMenu();
-       this.setVisible(false);
-       frmmenu.setDados(clsdados);
-       frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
-       frmmenu.setVisible(true);
-    }//GEN-LAST:event_cmdLoginActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
@@ -247,6 +215,29 @@ if(CheckBox.isSelected()){
     private void txtViewSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtViewSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtViewSenhaActionPerformed
+
+    private void BLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BLoginActionPerformed
+       // Botão login
+       
+       if (clsdados.validarUsuarios(txtUsuario.getText(),new String(txtSenha.getPassword()))){ 
+       }else{    
+           erroSenha.setVisible(true);
+           txtUsuario.setText("");
+           txtSenha.setText("");
+           txtUsuario.requestFocusInWindow();
+           return;
+       }
+       
+       frmMenu frmmenu = new frmMenu();
+       this.setVisible(false);
+       frmmenu.setDados(clsdados);
+       // frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       frmmenu.setVisible(true);
+    }//GEN-LAST:event_BLoginActionPerformed
+
+    private void BSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSairActionPerformed
+    this.dispose();
+    }//GEN-LAST:event_BSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,16 +275,15 @@ if(CheckBox.isSelected()){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BLogin;
+    private javax.swing.JButton BSair;
     private javax.swing.JCheckBox CheckBox;
-    private javax.swing.JButton cmdLogin;
-    private javax.swing.JButton cmdSair;
     private javax.swing.JLabel erroSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private javax.swing.JPasswordField txtSenha;
