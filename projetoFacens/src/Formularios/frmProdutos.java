@@ -588,7 +588,7 @@ private DefaultTableModel Usertable;
          String titulocabecalho[]={"Cod Produtos","Descrição","Preço","Taxa","Obs"};
          String RegCadastro[] = new String [5];
          Usertable= new DefaultTableModel(null,titulocabecalho);
-         for (int i = 0; i < clsdados.Nusuarios(); i++) {
+         for (int i = 0; i < clsdados.Nprodutos(); i++) {
              RegCadastro[0]= clsdados.getProdutos()[i].getCodProduto();
               RegCadastro[1]= clsdados.getProdutos()[i].getDescricao();
                RegCadastro[2]= "" + clsdados.getProdutos()[i].getPreco();

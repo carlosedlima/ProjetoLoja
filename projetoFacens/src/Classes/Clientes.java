@@ -135,9 +135,10 @@ public class Clientes {
          + Nome + "-"
          + Sobrenome + "-"
          + Endereco + "-"
+         + Telefone + "-"       
          + Cidade + "-"
-         + DataNasc + "-"
-         + DataVenda + "-"
+         + Utilidades.formatDate(DataNasc) + "-"
+         + Utilidades.formatDate(DataVenda) + "-"
          + Email;       
     }
     

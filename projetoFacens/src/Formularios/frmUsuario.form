@@ -71,7 +71,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="3d" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Primeiro"/>
+            <Property name="toolTipText" type="java.lang.String" value="Primeiro"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdPrimeiroActionPerformed"/>
@@ -87,7 +87,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="3d" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Procurar"/>
+            <Property name="toolTipText" type="java.lang.String" value="Buscar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdPesquisarActionPerformed"/>
@@ -125,7 +125,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="3d" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Anterior"/>
+            <Property name="toolTipText" type="java.lang.String" value="Anterior"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdAnteriorActionPerformed"/>
@@ -141,7 +141,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="3d" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Proximo"/>
+            <Property name="toolTipText" type="java.lang.String" value="Proximo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdProximoActionPerformed"/>
@@ -157,7 +157,7 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="47" green="3d" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ultimo"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ultimo"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmdUltimoActionPerformed"/>

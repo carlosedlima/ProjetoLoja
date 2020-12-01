@@ -5,11 +5,11 @@ public class Usuarios {
     private String nome;
     private String Snome;
     private String Senha;
-    private String perfil;
+    private int perfil;
     
     //CONSTRUTOR DOS Usuarios
     
-    public Usuarios(String Codusuario, String nome, String Snome, String Senha, String perfil) {
+    public Usuarios(String Codusuario, String nome, String Snome, String Senha, int perfil) {
         this.Codusuario = Codusuario;
         this.nome = nome;
         this.Snome = Snome;
@@ -54,14 +54,16 @@ public class Usuarios {
     public void setSenha(String Senha) {
         this.Senha = Senha;
     }
-    
-    public String getPerfil() {
+
+    public int getPerfil() {
         return perfil;
     }
 
-    public void setPerfil(String perfil) {
+    public void setPerfil(int perfil) {
         this.perfil = perfil;
     }
+    
+
     
     
     

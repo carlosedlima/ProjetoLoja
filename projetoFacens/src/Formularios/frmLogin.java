@@ -231,12 +231,14 @@ if(CheckBox.isSelected()){
        frmMenu frmmenu = new frmMenu();
        this.setVisible(false);
        frmmenu.setDados(clsdados);
-       // frmmenu.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       frmmenu.setupPerfil(clsdados.getPerfl(txtUsuario.getText()));
+       frmmenu.setupSenha(new String(txtSenha.getPassword()));
+       frmmenu.setupUsuario(txtUsuario.getText());
        frmmenu.setVisible(true);
     }//GEN-LAST:event_BLoginActionPerformed
 
     private void BSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BSairActionPerformed
-    this.dispose();
+          System.exit(0);
     }//GEN-LAST:event_BSairActionPerformed
 
     /**

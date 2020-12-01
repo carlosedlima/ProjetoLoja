@@ -71,24 +71,24 @@ public void setDados(Dados clsdados){
         jPanel1.setLayout(null);
 
         cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPrimeiro.setText("Primeiro");
+        cmdPrimeiro.setToolTipText("Primeiro");
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPrimeiro);
-        cmdPrimeiro.setBounds(20, 500, 83, 32);
+        cmdPrimeiro.setBounds(20, 500, 83, 16);
 
         cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPesquisar.setText("Procurar");
+        cmdPesquisar.setToolTipText("Buscar");
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(470, 500, 80, 32);
+        cmdPesquisar.setBounds(470, 500, 30, 16);
 
         cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
         cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,34 +103,34 @@ public void setDados(Dados clsdados){
         cmdEditar.setBounds(510, 60, 40, 46);
 
         cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAnterior.setText("Anterior");
+        cmdAnterior.setToolTipText("Anterior");
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
         jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(120, 500, 80, 32);
+        cmdAnterior.setBounds(120, 500, 80, 16);
 
         cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdProximo.setText("Proximo");
+        cmdProximo.setToolTipText("Proximo");
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdProximo);
-        cmdProximo.setBounds(200, 500, 76, 32);
+        cmdProximo.setBounds(200, 500, 30, 16);
 
         cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdUltimo.setText("Ultimo");
+        cmdUltimo.setToolTipText("Ultimo");
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdUltimo);
-        cmdUltimo.setBounds(280, 500, 74, 32);
+        cmdUltimo.setBounds(280, 500, 74, 16);
 
         cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
         cmdDeletar.setForeground(new java.awt.Color(255, 255, 255));
@@ -470,7 +470,7 @@ public void setDados(Dados clsdados){
                 }
             }
         }
-        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(String)cmbPerfil.getSelectedItem());
+        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(int)cmbPerfil.getSelectedIndex());
 
         String msg;
 
@@ -587,15 +587,15 @@ public void setDados(Dados clsdados){
              RegCadastro[0]= clsdados.getUsuarios()[i].getCodusuario();
               RegCadastro[1]= clsdados.getUsuarios()[i].getNome();
                RegCadastro[2]= clsdados.getUsuarios()[i].getSnome();
-                RegCadastro[3]= Perfil(clsdados.getUsuarios()[i].getPerfil());
+                RegCadastro[3]= Perfil (clsdados.getUsuarios()[i].getPerfil());
                 
                 Usertable.addRow(RegCadastro);    
          }
          Mtable.setModel(Usertable);
      }
     
-    private String Perfil(String idperfil){
-            if(idperfil.equals("1")){
+    private String Perfil(int idperfil){
+            if(idperfil == 1){
                 return "ADMINISTRADOR";
                 
         }else{

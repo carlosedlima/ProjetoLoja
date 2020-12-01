@@ -1,8 +1,12 @@
 
 package Classes;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.Date;
 
 public class Dados {
    
@@ -27,56 +31,15 @@ public class Dados {
   
    
     public Dados (){
-        Usuarios musuario;
-        
-        //Criando Usuario
-        musuario = new Usuarios("carlos", "Carlos", "Lima", "123", "1");
-        musuarios[countusuario] = musuario;
-        countusuario++;
-        
-        musuario = new Usuarios("Mike", "Mike", "Sista", "123", "2");
-        musuarios[countusuario] = musuario;
-        countusuario++;
-        
-        musuario = new Usuarios("Joana", "Joana", "Dark", "123", "2");
-        musuarios[countusuario] = musuario;
-        countusuario++;
+        //CARREGANDO USUARIOS
+      PreencherUsuarios();
     
-        
-        
       //CRIANDO OS CADASTROS DE PRODUTOS
-      Produtos mproduto;
-      mproduto = new Produtos("1","Arroz",500,0,"Arroz Fino");
-      mprodutos[countproduto] = mproduto;
-      countproduto++;
-      
-      
-      mproduto = new Produtos("2","feijão",50,0,"Feijão carioca");
-      mprodutos[countproduto] = mproduto;
-      countproduto++;
-      
-      mproduto = new Produtos("3","Bala",20,0,"bala de yogurt");
-      mprodutos[countproduto] = mproduto;
-      countproduto++;
-      
-      
-      
+       PreencherProdutos();
+     
       //CRIANDO OS CADASTROS DE CLIENTES
-      Clientes mcliente;
-      mcliente = new Clientes("1",1,"Carlos","Carlos","Andorinhas Voam",
-      "2512521525",1,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
-      mclientes[countcliente] = mcliente;
-      countcliente++;
       
-      mcliente = new Clientes("2",2,"carla","carla","peixes Nadam",
-      "2512529995",2,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
-      mclientes[countcliente] = mcliente;
-      countcliente++;
-      
-      mcliente = new Clientes("3",3,"Jorge","Jorge","Macacos pulam",
-      "2512527655",3,Utilidades.StringToDate("1975/10/04"),Utilidades.StringToDate("2017/09/30"),"carlinhostop@gmail.com");
-      mclientes[countcliente] = mcliente;
-      countcliente++;
+      PreencherClientes();
       
     }
     
@@ -101,6 +64,27 @@ public class Dados {
         }
         return false;
     }
+    
+    public int getPerfl (String usuario){
+        
+        for (int i=0; i < countusuario; i++) {
+            if (musuarios[i].getCodusuario().equals(usuario)) {
+                return musuarios[i].getPerfil();
+            }
+        }
+        return -1;
+    }
+    
+    
+    public void Altersenha (String usuario,String senha){
+        
+        for (int i=0; i < countusuario; i++) {
+            if (musuarios[i].getCodusuario().equals(usuario)) {
+                musuarios[i].setSenha(senha);
+            }
+        }
+    }
+    
     
     
    public int LinhaUsuario (String usuario){
@@ -136,12 +120,12 @@ public class Dados {
     
     //CONFIGURAÇÃO DOS DADOS PARA CLIENTES
     
-           public int Nclientes(){
+    public int Nclientes(){
         return countcliente;
     
     }
     
-        public Clientes[] getClientes(){
+    public Clientes[] getClientes(){
         return mclientes;
     }
    
@@ -258,13 +242,13 @@ public class Dados {
    */
    
    
-   
+   //FUNÇÃO CHAMADA AO SAIR DO FORMULARIO
    public void CadastroGeral(){
        SalvarUsuarios();
        SalvarClientes();
        SalvarProdutos();
    }
-   
+   //SALVANDO DADOS NO TXT
    public void SalvarUsuarios(){
       FileWriter FW= null;
       PrintWriter PW= null;
@@ -339,4 +323,301 @@ public class Dados {
           }
         }
    }
+   
+   
+   //CARREGAMENTO DOS DADOS ATRAVES DO TXT
+   
+   public void PreencherUsuarios(){
+       File Arquivo = null;
+       FileReader Fr = null;
+       BufferedReader BR= null;
+       
+       try {
+           Arquivo = new File("Dadosbd/usuarios.txt");
+           Fr = new FileReader(Arquivo);
+           BR = new BufferedReader(Fr);
+           
+           int pos;
+           String Ax;
+           String Codusuario;
+           String Linha;
+           String nome;
+           String Snome;
+           String senha;
+           int perfil;
+           
+           
+           
+           while ((Linha = BR.readLine()) !=null) {               
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Codusuario= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               //CARREGANDO NOME
+               
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               nome= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               
+               //CARREGANDO SOBRENOME
+               
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Snome= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               // CARREGANDO SENHA
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               senha= Ax;
+               
+               
+               Linha= Linha.substring(pos + 1);
+               perfil = new Integer(Linha);
+               
+               
+               Usuarios musuario;
+        
+               //Criando Usuario
+               musuario = new Usuarios(Codusuario, nome, Snome, senha, perfil);
+               musuarios[countusuario] = musuario;
+               countusuario++;
+               
+               
+           }
+           
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }finally{
+           try {
+               if (Fr !=null) {
+                   Fr.close();
+               }
+           } catch (Exception ex) {
+               ex.printStackTrace();
+           }
+       
+       
+       }
+       
+       
+       
+       
+   }
+   
+   public void PreencherProdutos(){
+       File Arquivo = null;
+       FileReader Fr = null;
+       BufferedReader BR= null;
+       
+       try {
+           Arquivo = new File("Dadosbd/produtos.txt");
+           Fr = new FileReader(Arquivo);
+           BR = new BufferedReader(Fr);
+           
+           int pos;
+           String Ax;
+           String Linha;
+           
+           String codProduto;
+           String descricao;
+           int preco;
+           int taxa;
+           String obs;
+           
+           while ((Linha = BR.readLine()) !=null) {
+               //CARREGANDO CODIGO PRODUTO
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               codProduto= Ax;
+               Linha= Linha.substring(pos + 1);
+               
+               //CARREGANDO DESCRIÇÃO
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               descricao= Ax;
+               Linha= Linha.substring(pos + 1);
+               
+               
+               //CARREGANDO PRECO
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               preco= new Integer(Ax);
+               Linha= Linha.substring(pos + 1);
+               
+               // CARREGANDO TAXA
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               taxa= new Integer(Ax);
+               Linha= Linha.substring(pos + 1);
+               obs = Linha;
+               
+               
+               
+        
+               //Criando Produto
+               
+               Produtos mproduto;
+               mproduto = new Produtos(codProduto,descricao,preco,taxa,obs);
+               mprodutos[countproduto] = mproduto;
+               countproduto++;
+               
+           }
+           
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }finally{
+           try {
+               if (Fr !=null) {
+                   Fr.close();
+               }
+           } catch (Exception ex) {
+               ex.printStackTrace();
+           }
+       
+       
+       }
+       
+       
+       
+       
+   }
+   
+   public void PreencherClientes(){
+       File Arquivo = null;
+       FileReader Fr = null;
+       BufferedReader BR= null;
+       
+       try {
+           Arquivo = new File("Dadosbd/clientes.txt");
+           Fr = new FileReader(Arquivo);
+           BR = new BufferedReader(Fr);
+           
+           int pos;
+           String Ax;
+           String Linha;
+           
+           String CodigoCliente;
+           int Indent;
+           String Nome;
+           String Sobrenome;
+           String Endereco;
+           int Cidade;
+           String Telefone;
+           Date DataNasc;
+           Date DataVenda;
+           String Email;
+           
+           
+           
+           while ((Linha = BR.readLine()) !=null) {
+               //CARREGANDO CODIGO CLIENTE
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               CodigoCliente= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               //CARREGANDO INDENTIDADE
+               
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Indent= new Integer(Ax);
+               
+               Linha= Linha.substring(pos + 1);
+               
+               
+               //CARREGANDO NOME
+               
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Nome= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               // CARREGANDO SOBRENOME
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Sobrenome= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+             
+               // CARREGANDO ENDEREÇO
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Endereco= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+                
+               // CARREGANDO TELEFONE
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Telefone= Ax;
+               
+               Linha= Linha.substring(pos + 1);
+               
+               // CARREGANDO CIDADE
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               Cidade= new Integer(Ax);
+               
+               Linha= Linha.substring(pos + 1);
+               
+               
+               // CARREGANDO DATA NASCIMENTO
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               DataNasc= Utilidades.StringToDate(Ax);
+               
+              
+              
+               
+               Linha= Linha.substring(pos + 1);
+               
+               
+               // CARREGANDO DATA VENDA
+               pos = Linha.indexOf("-");
+               Ax = Linha.substring(0,pos);
+               DataVenda= Utilidades.StringToDate(Ax);
+               
+               Linha= Linha.substring(pos + 1);
+               // CARREGANDO EMAIL
+               Email= Linha;
+               
+               
+               //CRIANDO CLIENTE
+               Clientes mcliente;
+               mcliente = new Clientes(CodigoCliente,Indent,Nome,Sobrenome,Endereco,
+               Telefone,Cidade,DataNasc,DataVenda,Email);
+               mclientes[countcliente] = mcliente;
+               countcliente++;
+               
+               
+           }
+           
+       } catch (Exception ex) {
+           ex.printStackTrace();
+       }finally{
+           try {
+               if (Fr !=null) {
+                   Fr.close();
+               }
+           } catch (Exception ex) {
+               ex.printStackTrace();
+           }
+       
+       
+       }
+       
+       
+       
+       
+   }
+   
 }

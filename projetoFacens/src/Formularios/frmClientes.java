@@ -178,8 +178,9 @@ public void setDados(Dados clsdados){
 
         calNascimento.setBackground(new java.awt.Color(51, 61, 71));
         calNascimento.setForeground(new java.awt.Color(255, 255, 255));
+        calNascimento.setDateFormatString("dd/MM/yyyy");
         jPanel1.add(calNascimento);
-        calNascimento.setBounds(251, 170, 148, 29);
+        calNascimento.setBounds(251, 170, 119, 29);
 
         cmbCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Cidade", "Sorocaba", "São Paulo", "Campinas" }));
         cmbCidade.setEnabled(false);
@@ -203,8 +204,9 @@ public void setDados(Dados clsdados){
 
         calData.setBackground(new java.awt.Color(51, 61, 71));
         calData.setForeground(new java.awt.Color(255, 255, 255));
+        calData.setDateFormatString("dd/MM/yyyy");
         jPanel1.add(calData);
-        calData.setBounds(400, 20, 148, 29);
+        calData.setBounds(400, 20, 130, 29);
 
         Mtable.setBackground(new java.awt.Color(51, 61, 71));
         Mtable.setForeground(new java.awt.Color(255, 255, 255));
@@ -512,7 +514,7 @@ public void setDados(Dados clsdados){
             cmbidentifica.requestFocusInWindow();
             return;
         }
-        if(calNascimento.getDate().before(new Date())){
+        if(!(calNascimento.getDate().before(new Date()))){
             JOptionPane.showMessageDialog(rootPane, "DADOS DA DATA DE NASCIMENTO NÃO CONFERE");
             calNascimento.requestFocusInWindow();
             return;
@@ -771,7 +773,7 @@ public void setDados(Dados clsdados){
          String RegCadastro[] = new String [10];
          Usertable= new DefaultTableModel(null,titulocabecalho);
          
-         for (int i = 0; i < clsdados.Nusuarios(); i++) {
+         for (int i = 0; i < clsdados.Nclientes(); i++) {
              RegCadastro[0]= clsdados.getClientes()[i].getCodigoCliente();
               RegCadastro[1]= Id(clsdados.getClientes()[i].getIndent());
                RegCadastro[2]= "" + clsdados.getClientes()[i].getDataVenda();

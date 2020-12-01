@@ -10,9 +10,25 @@ import Classes.Dados;
 public class frmMenu extends javax.swing.JFrame {
 private Dados clsdados;
 private String[] args;
+private int perfil;
+private String senha;
+private String usuario;
+
+public void setupUsuario(String usuario){
+    this.usuario = usuario;
+}
+
 
 public void setDados(Dados clsdados){
     this.clsdados = clsdados;
+}
+
+public void setupPerfil(int perfil){
+    this.perfil = perfil;
+}
+
+public void setupSenha(String senha){
+    this.senha = senha;
 }
    
     public frmMenu() {
@@ -46,6 +62,11 @@ public void setDados(Dados clsdados){
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PetVendas");
         setMinimumSize(new java.awt.Dimension(400, 200));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         DeskPainel.setBackground(new java.awt.Color(32, 34, 37));
         DeskPainel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
@@ -95,6 +116,11 @@ public void setDados(Dados clsdados){
 
         mnarquivo_altsenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/senha.png"))); // NOI18N
         mnarquivo_altsenha.setText("Alterar Senha");
+        mnarquivo_altsenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnarquivo_altsenhaActionPerformed(evt);
+            }
+        });
         mnarquivo.add(mnarquivo_altsenha);
 
         mnarquivo_altusuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/trocar_usuario.png"))); // NOI18N
@@ -124,6 +150,11 @@ public void setDados(Dados clsdados){
 
         mnmovimentos_vendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/venda.png"))); // NOI18N
         mnmovimentos_vendas.setText("Vendas");
+        mnmovimentos_vendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnmovimentos_vendasActionPerformed(evt);
+            }
+        });
         mnmovimentos.add(mnmovimentos_vendas);
 
         mnmovimentos_relatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/relatorios.png"))); // NOI18N
@@ -139,6 +170,11 @@ public void setDados(Dados clsdados){
 
         mnajuda_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/sobre.png"))); // NOI18N
         mnajuda_sobre.setText("Sobre");
+        mnajuda_sobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnajuda_sobreActionPerformed(evt);
+            }
+        });
         mnajuda.add(mnajuda_sobre);
 
         mnajuda_ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ajuda.png"))); // NOI18N
@@ -176,9 +212,14 @@ public void setDados(Dados clsdados){
             clsdados.CadastroGeral();
             System.exit(0);
     }//GEN-LAST:event_mnarquivo_sairActionPerformed
-
+        //ESTE É O BOTÃO DE ALTERAR USUARIO
     private void mnarquivo_altusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_altusuarioActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        frmLogin mlogin = new frmLogin();
+        mlogin.setDados(clsdados);
+        mlogin.setLocationRelativeTo(null);
+        mlogin.setVisible(true);
+        
     }//GEN-LAST:event_mnarquivo_altusuarioActionPerformed
         // CÓDIGO DO BOTÃO CLIENTES NA BARRA DE MENU
     private void mnarquivo_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_clientesActionPerformed
@@ -195,6 +236,34 @@ public void setDados(Dados clsdados){
         fprodutos.setVisible(true);
         
     }//GEN-LAST:event_mnarquivo_produtosActionPerformed
+        //EVENTO PRA QUANDO ABRIR
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        if(perfil ==2){
+            mnmovimentos_relatorio.setEnabled(false);
+             mnarquivo_altsenha.setEnabled(false);
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void mnarquivo_altsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnarquivo_altsenhaActionPerformed
+        frmAlterarSenha Malterarsenha = new frmAlterarSenha(this,rootPaneCheckingEnabled);
+        Malterarsenha.setupSenha(senha);
+        Malterarsenha.setupUsuario(usuario);
+        Malterarsenha.setDados(clsdados);
+        Malterarsenha.setLocationRelativeTo(this);
+        Malterarsenha.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_mnarquivo_altsenhaActionPerformed
+
+    private void mnajuda_sobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnajuda_sobreActionPerformed
+        frmSobre formularioSobre = new frmSobre(this,rootPaneCheckingEnabled);
+        formularioSobre.setLocationRelativeTo(this);
+        formularioSobre.setVisible(rootPaneCheckingEnabled);
+    }//GEN-LAST:event_mnajuda_sobreActionPerformed
+
+    private void mnmovimentos_vendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnmovimentos_vendasActionPerformed
+        frmControlevendas frmvendas = new frmControlevendas();
+        frmvendas.setDados(clsdados);
+        frmvendas.setVisible(true);
+    }//GEN-LAST:event_mnmovimentos_vendasActionPerformed
 
     /**
      * @param args the command line arguments
