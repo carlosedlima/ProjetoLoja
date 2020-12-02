@@ -2,9 +2,10 @@
 <h2>:convenience_store: Loja</h2><hr>
 Nome da loja: <b>PetVendas</b><br>
 Logo: <br>
-<div style="text-align:center"> 
 
-![](Images/PetVendas.jpg) </div>
+<p align="center"> 
+  
+![](Images/PetVendas.jpg) </p>
 
 <h2>:construction_worker: Equipe</h2>
 <p>Carlos Eduardo de Lima - RA: 200072</p>
@@ -18,7 +19,7 @@ Logo: <br>
 <h2>:memo: Diagramas</h2>
 Diagrama de Classes:<br>
 
-![](Images/DiagramadeClasses.png)
+![Logo](Images/DiagramadeClasses.png)
 
 Diagrama Entidade Relacionamento:<br>
 
