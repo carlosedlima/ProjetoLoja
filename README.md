@@ -4,7 +4,7 @@ Nome da loja: <b>PetVendas</b><br>
 Logo: <br>
 
 <p align="center">
-  <img width="460" height="300" src="Images/PetVendas.jpg">
+  <img width="460" height="300" src="Images/PetVendas2.jpg">
 </p>
 
 
