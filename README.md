@@ -2,8 +2,9 @@
 <h2>:convenience_store: Loja</h2><hr>
 Nome da loja: <b>PetVendas</b><br>
 Logo: <br>
+<div style="text-align:center"> 
 
-![](Images/PetVendas.jpg)
+![](Images/PetVendas.jpg) </div>
 
 <h2>:construction_worker: Equipe</h2>
 <p>Carlos Eduardo de Lima - RA: 200072</p>
