@@ -1,10 +1,8 @@
 <h1>Projeto de um Sistema de vendas em Java.</h1><br>
-<h2>:convenience_store: Loja</h2><hr>
-Nome da loja: <b>PetVendas</b><br>
-Logo: <br>
+<h2>:convenience_store: PetVendas</h2><hr>
 
 <p align="center">
-  <img width="460" height="300" src="Images/PetVendas2.jpg">
+  <img src="Images/PetVendas2.jpg">
 </p>
 
 
