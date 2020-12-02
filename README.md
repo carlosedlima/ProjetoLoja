@@ -3,9 +3,10 @@
 Nome da loja: <b>PetVendas</b><br>
 Logo: <br>
 
-<p align="center"> 
-  
-![](Images/PetVendas.jpg) </p>
+<p align="center">
+  <img width="460" height="300" src="Images/PetVendas.jpg">
+</p>
+
 
 <h2>:construction_worker: Equipe</h2>
 <p>Carlos Eduardo de Lima - RA: 200072</p>
