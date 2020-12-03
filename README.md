@@ -1,7 +1,7 @@
 # Sistema de vendas em Java.
 
 <p align="center">
-  <img src="./Images/PetVendas2.jpg"><br>
+  <img src="./Images/PetVendas2.jpg" alt="banner PetVendas"><br>
 </p>
 
 <h3 align="center">
