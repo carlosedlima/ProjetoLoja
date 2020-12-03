@@ -2,6 +2,7 @@
 package Formularios;
 
 import Classes.Dados;
+import Classes.Dados_db;
 
 /**
  *
@@ -13,6 +14,14 @@ private String[] args;
 private int perfil;
 private String senha;
 private String usuario;
+private Dados_db clsdadosdb;
+
+
+public void setDados_db(Dados_db clsdadosdb){
+    this.clsdadosdb = clsdadosdb;
+}
+
+
 
 public void setupUsuario(String usuario){
     this.usuario = usuario;
@@ -239,8 +248,8 @@ public void setupSenha(String senha){
         //EVENTO PRA QUANDO ABRIR
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         if(perfil ==2){
-            mnmovimentos_relatorio.setEnabled(false);
-             mnarquivo_altsenha.setEnabled(false);
+            mnmovimentos_relatorio.setVisible(false);
+            mnarquivo_altsenha.setVisible(false);
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -318,4 +327,5 @@ public void setupSenha(String senha){
     private javax.swing.JMenuItem mnmovimentos_relatorio;
     private javax.swing.JMenuItem mnmovimentos_vendas;
     // End of variables declaration//GEN-END:variables
+
 }

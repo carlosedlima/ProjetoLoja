@@ -2,11 +2,18 @@
 package Formularios;
 
 import Classes.Dados;
+import Classes.Dados_db;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class frmLogin extends javax.swing.JFrame {
 private Dados clsdados;
+private Dados_db clsdadosdb;
+
+public void setDados_db(Dados_db clsdadosdb){
+    this.clsdadosdb = clsdadosdb;
+}
+
 
 public void setDados(Dados clsdados){
     this.clsdados = clsdados;
@@ -231,6 +238,8 @@ if(CheckBox.isSelected()){
        frmMenu frmmenu = new frmMenu();
        this.setVisible(false);
        frmmenu.setDados(clsdados);
+       frmmenu.setDados_db(clsdadosdb);
+       
        frmmenu.setupPerfil(clsdados.getPerfl(txtUsuario.getText()));
        frmmenu.setupSenha(new String(txtSenha.getPassword()));
        frmmenu.setupUsuario(txtUsuario.getText());

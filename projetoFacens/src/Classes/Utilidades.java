@@ -40,6 +40,25 @@ public class Utilidades {
         return formatotexto.format(Data);
     }
     
+    public static int objectToInt(Object Obj){
+        int NumInt = Integer.parseInt(objectToString(Obj));
+        return NumInt;
+    }
     
+    public static double objectToDouble(Object Obj){
+        String Str = Obj.toString();
+        double NumDouble = Double.valueOf(Str).doubleValue();
+        return NumDouble;
+    }
+   
+    
+   public static String objectToString(Object Obj) {
+        String Str = "";
+        if (Obj != null){
+            Str = Obj.toString();
+        }
+        return Str;
+    }
+   
     
 }
