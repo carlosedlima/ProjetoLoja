@@ -65,85 +65,94 @@ public void setDados(Dados clsdados){
         jPanel1.setBackground(new java.awt.Color(32, 34, 37));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 61, 71), 7));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setToolTipText("");
         jPanel1.setMinimumSize(new java.awt.Dimension(602, 1194));
         jPanel1.setPreferredSize(new java.awt.Dimension(602, 1194));
         jPanel1.setLayout(null);
 
         cmdPrimeiro.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-w.png"))); // NOI18N
+        cmdPrimeiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1-invertido.png"))); // NOI18N
+        cmdPrimeiro.setToolTipText("Primeiro");
         cmdPrimeiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPrimeiroActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPrimeiro);
-        cmdPrimeiro.setBounds(20, 570, 30, 29);
+        cmdPrimeiro.setBounds(20, 550, 30, 30);
 
         cmdPesquisar.setBackground(new java.awt.Color(51, 61, 71));
-        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupw.png"))); // NOI18N
+        cmdPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/024-loupe.png"))); // NOI18N
+        cmdPesquisar.setToolTipText("Buscar");
         cmdPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdPesquisarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdPesquisar);
-        cmdPesquisar.setBounds(550, 570, 30, 29);
+        cmdPesquisar.setBounds(510, 550, 40, 30);
 
         cmdEditar.setBackground(new java.awt.Color(51, 61, 71));
         cmdEditar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w092-edit copy.png"))); // NOI18N
+        cmdEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/092-edit copy.png"))); // NOI18N
+        cmdEditar.setToolTipText("Editar");
         cmdEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdEditar);
-        cmdEditar.setBounds(540, 60, 40, 39);
+        cmdEditar.setBounds(510, 60, 40, 39);
 
         cmdAnterior.setBackground(new java.awt.Color(51, 61, 71));
-        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-w.png"))); // NOI18N
+        cmdAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2-invertido.png"))); // NOI18N
+        cmdAnterior.setToolTipText("Anterior");
         cmdAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdAnteriorActionPerformed(evt);
             }
         });
         jPanel1.add(cmdAnterior);
-        cmdAnterior.setBounds(70, 570, 30, 29);
+        cmdAnterior.setBounds(60, 550, 30, 30);
 
         cmdProximo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-nextw.png"))); // NOI18N
+        cmdProximo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/030-next-2.png"))); // NOI18N
+        cmdProximo.setToolTipText("Proximo");
         cmdProximo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdProximoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdProximo);
-        cmdProximo.setBounds(100, 570, 30, 29);
+        cmdProximo.setBounds(90, 550, 30, 30);
 
         cmdUltimo.setBackground(new java.awt.Color(51, 61, 71));
-        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-nextw.png"))); // NOI18N
+        cmdUltimo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/042-next-1.png"))); // NOI18N
+        cmdUltimo.setToolTipText("Ultimo");
         cmdUltimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdUltimoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdUltimo);
-        cmdUltimo.setBounds(150, 570, 30, 29);
+        cmdUltimo.setBounds(130, 550, 30, 30);
 
         cmdDeletar.setBackground(new java.awt.Color(51, 61, 71));
         cmdDeletar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/098-delete-2 copy.png"))); // NOI18N
+        cmdDeletar.setToolTipText("Deletar");
         cmdDeletar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeletarActionPerformed(evt);
             }
         });
         jPanel1.add(cmdDeletar);
-        cmdDeletar.setBounds(540, 100, 40, 40);
+        cmdDeletar.setBounds(510, 100, 40, 40);
 
         cmdCancelar.setBackground(new java.awt.Color(51, 61, 71));
         cmdCancelar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w127-ban copy.png"))); // NOI18N
+        cmdCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/127-ban copy.png"))); // NOI18N
+        cmdCancelar.setToolTipText("Cancelar");
         cmdCancelar.setEnabled(false);
         cmdCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,11 +160,12 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmdCancelar);
-        cmdCancelar.setBounds(540, 220, 40, 40);
+        cmdCancelar.setBounds(510, 160, 40, 40);
 
         cmdAdicionar.setBackground(new java.awt.Color(51, 61, 71));
         cmdAdicionar.setForeground(new java.awt.Color(255, 255, 255));
-        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/w027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/027-diskette copy.png"))); // NOI18N
+        cmdAdicionar.setToolTipText("Salvar");
         cmdAdicionar.setEnabled(false);
         cmdAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,23 +173,30 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmdAdicionar);
-        cmdAdicionar.setBounds(540, 180, 40, 40);
+        cmdAdicionar.setBounds(470, 160, 40, 40);
 
         cmdNovo.setBackground(new java.awt.Color(51, 61, 71));
         cmdNovo.setForeground(new java.awt.Color(255, 255, 255));
         cmdNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Formularios/074-layers copy.png"))); // NOI18N
+        cmdNovo.setToolTipText("Novo");
         cmdNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdNovoActionPerformed(evt);
             }
         });
         jPanel1.add(cmdNovo);
-        cmdNovo.setBounds(540, 20, 40, 39);
+        cmdNovo.setBounds(510, 20, 40, 39);
 
+        txtCsenha.setBackground(new java.awt.Color(51, 61, 71));
+        txtCsenha.setForeground(new java.awt.Color(255, 255, 255));
+        txtCsenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCsenha.setEnabled(false);
         jPanel1.add(txtCsenha);
-        txtCsenha.setBounds(20, 230, 290, 20);
+        txtCsenha.setBounds(20, 230, 220, 30);
 
+        txtSenha.setBackground(new java.awt.Color(51, 61, 71));
+        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
+        txtSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtSenha.setEnabled(false);
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,12 +204,23 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(txtSenha);
-        txtSenha.setBounds(20, 180, 290, 20);
+        txtSenha.setBounds(20, 176, 220, 30);
 
+        txtSnome.setBackground(new java.awt.Color(51, 61, 71));
+        txtSnome.setForeground(new java.awt.Color(255, 255, 255));
+        txtSnome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtSnome.setEnabled(false);
+        txtSnome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSnomeActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtSnome);
-        txtSnome.setBounds(20, 120, 470, 20);
+        txtSnome.setBounds(20, 130, 400, 30);
 
+        txtNome.setBackground(new java.awt.Color(51, 61, 71));
+        txtNome.setForeground(new java.awt.Color(255, 255, 255));
+        txtNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNome.setEnabled(false);
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,8 +228,11 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(txtNome);
-        txtNome.setBounds(20, 70, 470, 20);
+        txtNome.setBounds(20, 80, 400, 30);
 
+        txtCodigoUsuario.setBackground(new java.awt.Color(51, 61, 71));
+        txtCodigoUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        txtCodigoUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCodigoUsuario.setEnabled(false);
         txtCodigoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +240,7 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(txtCodigoUsuario);
-        txtCodigoUsuario.setBounds(40, 20, 170, 20);
+        txtCodigoUsuario.setBounds(40, 20, 170, 30);
 
         cmbPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Perfil", "Administrador", "Funcionario" }));
         cmbPerfil.setEnabled(false);
@@ -219,13 +250,13 @@ public void setDados(Dados clsdados){
             }
         });
         jPanel1.add(cmbPerfil);
-        cmbPerfil.setBounds(300, 20, 190, 20);
+        cmbPerfil.setBounds(260, 20, 160, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Perfil:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(260, 20, 40, 20);
+        jLabel6.setBounds(220, 20, 32, 20);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -237,13 +268,13 @@ public void setDados(Dados clsdados){
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nome");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 50, 40, 20);
+        jLabel2.setBounds(20, 60, 40, 20);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("2º nome");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 100, 50, 20);
+        jLabel3.setBounds(20, 110, 50, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -272,19 +303,20 @@ public void setDados(Dados clsdados){
         jScrollPane1.setViewportView(Mtable);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 270, 560, 290);
+        jScrollPane1.setBounds(20, 270, 530, 270);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -466,7 +498,7 @@ public void setDados(Dados clsdados){
                 }
             }
         }
-        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(String)cmbPerfil.getSelectedItem());
+        Usuarios Musuario = new Usuarios(txtCodigoUsuario.getText(),txtNome.getText(), txtSnome.getText(), SSenha,(int)cmbPerfil.getSelectedIndex());
 
         String msg;
 
@@ -564,6 +596,10 @@ public void setDados(Dados clsdados){
     private void txtCodigoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoUsuarioActionPerformed
+
+    private void txtSnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSnomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSnomeActionPerformed
   
     
     private void visualizarCadastros(){
@@ -583,15 +619,15 @@ public void setDados(Dados clsdados){
              RegCadastro[0]= clsdados.getUsuarios()[i].getCodusuario();
               RegCadastro[1]= clsdados.getUsuarios()[i].getNome();
                RegCadastro[2]= clsdados.getUsuarios()[i].getSnome();
-                RegCadastro[3]= Perfil(clsdados.getUsuarios()[i].getPerfil());
+                RegCadastro[3]= Perfil (clsdados.getUsuarios()[i].getPerfil());
                 
                 Usertable.addRow(RegCadastro);    
          }
          Mtable.setModel(Usertable);
      }
     
-    private String Perfil(String idperfil){
-            if(idperfil.equals("1")){
+    private String Perfil(int idperfil){
+            if(idperfil == 1){
                 return "ADMINISTRADOR";
                 
         }else{

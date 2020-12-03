@@ -129,15 +129,16 @@ public class Clientes {
     */
     
     
-    public String Tostring(){
+    public String ToString(){
         return CodigoCliente + "-"
          + Indent + "-"
          + Nome + "-"
          + Sobrenome + "-"
          + Endereco + "-"
+         + Telefone + "-"       
          + Cidade + "-"
-         + DataNasc + "-"
-         + DataVenda + "-"
+         + Utilidades.formatDate(DataNasc) + "-"
+         + Utilidades.formatDate(DataVenda) + "-"
          + Email;       
     }
     
