@@ -20,8 +20,8 @@
 
 
 <h2 id="sobre">:heavy_check_mark: Sobre</h2>
-<p>Objetivo do Sistema: Nesse sistema os funcionários poderão cadastrar clientes e realizar vendas. Tais vendas serão salvas no banco de dados.</p> 
-<p>Seguindo a ideia do PetHelper (Projeto de Fábrica de Projetos), o PetVendas é direcionado a donos de Pets, logo os produtos seriam relacionados a eles.</p>
+<p>Sistema de vendas de produtos de um Petshop onde os funcionários podem cadastrar clientes e realizar vendas. Tais vendas são salvas no banco de dados.</p> 
+<p>Projeto educacional feito no 2º Semestre de ADS na Facens.</p>
 
 ----
 
@@ -29,7 +29,8 @@
 
 - [x] Cadastro de usuário
 - [x] Cadastro de cliente
-- [ ] Cadastro de produtos
+- [X] Cadastro de produtos
+- [X] Realiza vendas
 
 ----
 
